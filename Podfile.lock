@@ -1,16 +1,28 @@
 PODS:
   - ObjectMapper (4.2.0)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - ObjectMapper
+  - PromiseKit
 
 SPEC REPOS:
   trunk:
     - ObjectMapper
+    - PromiseKit
 
 SPEC CHECKSUMS:
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
 
-PODFILE CHECKSUM: fce51ea61aaeba562c64241acffb9f5ff68b5ab0
+PODFILE CHECKSUM: f4f798c172196ee55bcd0a3827e2b6f56a2e1dd1
 
 COCOAPODS: 1.10.1

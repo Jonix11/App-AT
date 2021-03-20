@@ -7,6 +7,7 @@ target 'MarvelApp' do
 
   # Pods for MarvelApp
   pod 'ObjectMapper'
+  pod 'PromiseKit'
 
   target 'MarvelAppTests' do
     inherit! :search_paths
