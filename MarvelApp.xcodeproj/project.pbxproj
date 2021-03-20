@@ -108,6 +108,7 @@
 				AC3980C4260666F900E4CC44 /* Assets.xcassets */,
 				AC39810226066C0400E4CC44 /* Configuration */,
 				AC3980C6260666F900E4CC44 /* LaunchScreen.storyboard */,
+				AC3981302606716E00E4CC44 /* Models */,
 				AC3980BD260666F800E4CC44 /* SceneDelegate.swift */,
 			);
 			path = MarvelApp;
@@ -131,6 +132,13 @@
 				AC39810B26066C7100E4CC44 /* Production.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		AC3981302606716E00E4CC44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FC62858CBB86ED23D03DAEBB /* Pods */ = {
@@ -160,6 +168,7 @@
 				AC3980B5260666F800E4CC44 /* Frameworks */,
 				AC3980B6260666F800E4CC44 /* Resources */,
 				AC3980F72606688E00E4CC44 /* Run Swiftlint */,
+				A513DFA3744280A065AD91E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +255,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A513DFA3744280A065AD91E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelApp/Pods-MarvelApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelApp/Pods-MarvelApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelApp/Pods-MarvelApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A6C857C1DA31A59B77FE113B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

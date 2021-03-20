@@ -6,6 +6,7 @@ target 'MarvelApp' do
   use_frameworks!
 
   # Pods for MarvelApp
+  pod 'ObjectMapper'
 
   target 'MarvelAppTests' do
     inherit! :search_paths
