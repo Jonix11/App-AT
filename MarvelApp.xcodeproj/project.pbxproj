@@ -9,23 +9,13 @@
 /* Begin PBXBuildFile section */
 		AC3980BC260666F800E4CC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3980BB260666F800E4CC44 /* AppDelegate.swift */; };
 		AC3980BE260666F800E4CC44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3980BD260666F800E4CC44 /* SceneDelegate.swift */; };
-		AC3980C0260666F800E4CC44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3980BF260666F800E4CC44 /* ViewController.swift */; };
-		AC3980C3260666F800E4CC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3980C1260666F800E4CC44 /* Main.storyboard */; };
 		AC3980C5260666F900E4CC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3980C4260666F900E4CC44 /* Assets.xcassets */; };
 		AC3980C8260666F900E4CC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3980C6260666F900E4CC44 /* LaunchScreen.storyboard */; };
 		AC3980D3260666F900E4CC44 /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3980D2260666F900E4CC44 /* MarvelAppTests.swift */; };
-		AC3980DE260666F900E4CC44 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3980DD260666F900E4CC44 /* MarvelAppUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		AC3980CF260666F900E4CC44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC3980B0260666F800E4CC44 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC3980B7260666F800E4CC44;
-			remoteInfo = MarvelApp;
-		};
-		AC3980DA260666F900E4CC44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AC3980B0260666F800E4CC44 /* Project object */;
 			proxyType = 1;
@@ -38,17 +28,12 @@
 		AC3980B8260666F800E4CC44 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3980BB260666F800E4CC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC3980BD260666F800E4CC44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC3980BF260666F800E4CC44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC3980C2260666F800E4CC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC3980C4260666F900E4CC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC3980C7260666F900E4CC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC3980C9260666F900E4CC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3980CE260666F900E4CC44 /* MarvelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3980D2260666F900E4CC44 /* MarvelAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppTests.swift; sourceTree = "<group>"; };
 		AC3980D4260666F900E4CC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC3980D9260666F900E4CC44 /* MarvelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC3980DD260666F900E4CC44 /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
-		AC3980DF260666F900E4CC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +51,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC3980D6260666F900E4CC44 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +59,6 @@
 			children = (
 				AC3980BA260666F800E4CC44 /* MarvelApp */,
 				AC3980D1260666F900E4CC44 /* MarvelAppTests */,
-				AC3980DC260666F900E4CC44 /* MarvelAppUITests */,
 				AC3980B9260666F800E4CC44 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +68,6 @@
 			children = (
 				AC3980B8260666F800E4CC44 /* MarvelApp.app */,
 				AC3980CE260666F900E4CC44 /* MarvelAppTests.xctest */,
-				AC3980D9260666F900E4CC44 /* MarvelAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,8 +77,6 @@
 			children = (
 				AC3980BB260666F800E4CC44 /* AppDelegate.swift */,
 				AC3980BD260666F800E4CC44 /* SceneDelegate.swift */,
-				AC3980BF260666F800E4CC44 /* ViewController.swift */,
-				AC3980C1260666F800E4CC44 /* Main.storyboard */,
 				AC3980C4260666F900E4CC44 /* Assets.xcassets */,
 				AC3980C6260666F900E4CC44 /* LaunchScreen.storyboard */,
 				AC3980C9260666F900E4CC44 /* Info.plist */,
@@ -117,15 +91,6 @@
 				AC3980D4260666F900E4CC44 /* Info.plist */,
 			);
 			path = MarvelAppTests;
-			sourceTree = "<group>";
-		};
-		AC3980DC260666F900E4CC44 /* MarvelAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AC3980DD260666F900E4CC44 /* MarvelAppUITests.swift */,
-				AC3980DF260666F900E4CC44 /* Info.plist */,
-			);
-			path = MarvelAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,24 +131,6 @@
 			productReference = AC3980CE260666F900E4CC44 /* MarvelAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AC3980D8260666F900E4CC44 /* MarvelAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC3980E8260666F900E4CC44 /* Build configuration list for PBXNativeTarget "MarvelAppUITests" */;
-			buildPhases = (
-				AC3980D5260666F900E4CC44 /* Sources */,
-				AC3980D6260666F900E4CC44 /* Frameworks */,
-				AC3980D7260666F900E4CC44 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC3980DB260666F900E4CC44 /* PBXTargetDependency */,
-			);
-			name = MarvelAppUITests;
-			productName = MarvelAppUITests;
-			productReference = AC3980D9260666F900E4CC44 /* MarvelAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +144,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					AC3980CD260666F900E4CC44 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = AC3980B7260666F800E4CC44;
-					};
-					AC3980D8260666F900E4CC44 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = AC3980B7260666F800E4CC44;
 					};
@@ -221,7 +164,6 @@
 			targets = (
 				AC3980B7260666F800E4CC44 /* MarvelApp */,
 				AC3980CD260666F900E4CC44 /* MarvelAppTests */,
-				AC3980D8260666F900E4CC44 /* MarvelAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,18 +175,10 @@
 			files = (
 				AC3980C8260666F900E4CC44 /* LaunchScreen.storyboard in Resources */,
 				AC3980C5260666F900E4CC44 /* Assets.xcassets in Resources */,
-				AC3980C3260666F800E4CC44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AC3980CC260666F900E4CC44 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC3980D7260666F900E4CC44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -258,7 +192,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC3980C0260666F800E4CC44 /* ViewController.swift in Sources */,
 				AC3980BC260666F800E4CC44 /* AppDelegate.swift in Sources */,
 				AC3980BE260666F800E4CC44 /* SceneDelegate.swift in Sources */,
 			);
@@ -272,14 +205,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC3980D5260666F900E4CC44 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC3980DE260666F900E4CC44 /* MarvelAppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -288,22 +213,9 @@
 			target = AC3980B7260666F800E4CC44 /* MarvelApp */;
 			targetProxy = AC3980CF260666F900E4CC44 /* PBXContainerItemProxy */;
 		};
-		AC3980DB260666F900E4CC44 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC3980B7260666F800E4CC44 /* MarvelApp */;
-			targetProxy = AC3980DA260666F900E4CC44 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AC3980C1260666F800E4CC44 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC3980C2260666F800E4CC44 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AC3980C6260666F900E4CC44 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -513,46 +425,6 @@
 			};
 			name = Release;
 		};
-		AC3980E9260666F900E4CC44 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5GJ4N5ZR45;
-				INFOPLIST_FILE = MarvelAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jongonzalez.MarvelAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarvelApp;
-			};
-			name = Debug;
-		};
-		AC3980EA260666F900E4CC44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5GJ4N5ZR45;
-				INFOPLIST_FILE = MarvelAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jongonzalez.MarvelAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MarvelApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,15 +451,6 @@
 			buildConfigurations = (
 				AC3980E6260666F900E4CC44 /* Debug */,
 				AC3980E7260666F900E4CC44 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AC3980E8260666F900E4CC44 /* Build configuration list for PBXNativeTarget "MarvelAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC3980E9260666F900E4CC44 /* Debug */,
-				AC3980EA260666F900E4CC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
