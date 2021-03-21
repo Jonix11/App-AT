@@ -44,7 +44,7 @@ extension Character: CellItemContract {
         let ext = self.image[ImageDictionary.ext.rawValue]
         if let strPath = path,
            let strExt = ext {
-            let strURL = strPath + strExt
+            let strURL = strPath + "." + strExt
             return URL(string: strURL)
         } else {
             return nil
