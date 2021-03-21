@@ -18,6 +18,8 @@ protocol CharacterListEntityContract: BaseEntity {
 protocol CharacterListViewContract: BaseViewController {
     var presenter: CharacterListPresenterContract! { get set }
     
+    func updateCharacterListData(with character: [Character])
+    
 }
 
 protocol CharacterListPresenterContract: BasePresenter {
@@ -28,10 +30,13 @@ protocol CharacterListPresenterContract: BasePresenter {
 
     func viewDidLoad()
     func viewWillAppear()
+    func getCharacterList() 
 }
 
 protocol CharacterListInteractorContract: BaseInteractor {
     var output: CharacterListInteractorOutputContract! {get set}
+    
+    func getCharacterList() -> Promise<[Character]>
 }
 
 protocol CharacterListInteractorOutputContract: class {

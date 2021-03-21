@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class CharacterListPresenter: BasePresenter, CharacterListPresenterContract {
 
@@ -21,10 +22,19 @@ class CharacterListPresenter: BasePresenter, CharacterListPresenterContract {
     }
 
     func viewWillAppear() {
-
+        self.getCharacterList()
+    }
+    
+    func getCharacterList() {
+        firstly {
+            interactor.getCharacterList()
+        }.done { [weak self] characterList in
+            self?.view.updateCharacterListData(with: characterList)
+        }.catch { error in
+            #warning("TODO: Improve")
+        }
     }
 }
-
 
 // MARK: - CharacterListInteractorOutputContract
 extension CharacterListPresenter: CharacterListInteractorOutputContract {
