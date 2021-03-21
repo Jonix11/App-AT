@@ -10,23 +10,29 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
 
 DEPENDENCIES:
   - Alamofire
   - ObjectMapper
   - PromiseKit
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - ObjectMapper
     - PromiseKit
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
 
-PODFILE CHECKSUM: b2924434603c508d08360244bc88a569a991e2f2
+PODFILE CHECKSUM: f405bef00fedf48b202486e67240b976e50112e2
 
 COCOAPODS: 1.10.1
