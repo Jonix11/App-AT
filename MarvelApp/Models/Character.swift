@@ -24,3 +24,30 @@ struct Character: ImmutableMappable {
         comics = try map.value("comics.items")
     }
 }
+
+enum ImageDictionary: String {
+    case path = "path"
+    case ext = "extension"
+}
+
+extension Character: CellItemContract {
+    var itemId: Int {
+        return self.charaterId
+    }
+
+    var itemName: String {
+        return self.name
+    }
+
+    var itemImage: URL? {
+        let path = self.image[ImageDictionary.path.rawValue]
+        let ext = self.image[ImageDictionary.ext.rawValue]
+        if let strPath = path,
+           let strExt = ext {
+            let strURL = strPath + strExt
+            return URL(string: strURL)
+        } else {
+            return nil
+        }
+    }
+}
