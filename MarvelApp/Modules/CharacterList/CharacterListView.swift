@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterListView: BaseViewController, CharacterListViewContract {
     
@@ -40,28 +41,28 @@ class CharacterListView: BaseViewController, CharacterListViewContract {
     }
     
     // MARK: - Public methods
-    func updateCharacterListData(with character: [Character]) {
-        self.datasource.characters = character
+    func updateCharacterListData(with character: [CellItemContract]) {
+        self.datasource.items = character
         self.tableView.reloadData()
     }
 }
 
 class CharacterListDatasource: NSObject, UITableViewDataSource {
-    var characters = [Character]()
+    var items = [CellItemContract]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = characters[indexPath.row]
+        let item = items[indexPath.row]
         let cellId = "CharacterCell"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
         }
         
-        cell?.textLabel?.text = character.name
-        print(character.image)
+        cell?.textLabel?.text = item.itemName
+        cell?.imageView?.sd_setImage(with: item.itemImage, placeholderImage: UIImage(named: "NotImage"))
         
         // En este caso hago el unwrap forzado porque sé que va a haber una celda, ya que si no tiene ninguna para reusar
         // la creo yo del estilo por defecto.

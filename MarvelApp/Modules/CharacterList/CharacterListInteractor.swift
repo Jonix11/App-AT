@@ -20,12 +20,16 @@ class CharacterListInteractor: BaseInteractor, CharacterListInteractorContract {
         self.networkProvider = provider
     }
     
-    func getCharacterList() -> Promise<[Character]> {
-        return Promise<[Character]> { promise in
+    func getCharacterList() -> Promise<[CellItemContract]> {
+        return Promise<[CellItemContract]> { promise in
             firstly {
                 networkProvider.getCharacters()
             }.done { characterList in
-                promise.fulfill(characterList)
+                var cellCharactersList = [CellItemContract]()
+                for character in characterList {
+                    cellCharactersList.append(character)
+                }
+                promise.fulfill(cellCharactersList)
             }.catch { error in
                 #warning("TODO: Improve")
                 promise.reject(error)
