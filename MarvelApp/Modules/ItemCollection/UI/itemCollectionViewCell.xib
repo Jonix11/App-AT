@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="itemCollectionViewCell" customModule="MarvelApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="263" height="291"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="263" height="291"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qnh-hg-1m1">
+                        <rect key="frame" x="0.0" y="0.0" width="263" height="291"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fq2-4J-dVU">
+                        <rect key="frame" x="0.0" y="250.5" width="263" height="40.5"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qnh-hg-1m1" secondAttribute="trailing" id="9Sp-0s-b9K"/>
+                <constraint firstItem="qnh-hg-1m1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="E19-7M-oLX"/>
+                <constraint firstItem="Fq2-4J-dVU" firstAttribute="height" secondItem="qnh-hg-1m1" secondAttribute="height" multiplier="0.14" id="U3b-OT-xkQ"/>
+                <constraint firstAttribute="bottom" secondItem="qnh-hg-1m1" secondAttribute="bottom" id="ZhO-FC-xrM"/>
+                <constraint firstItem="Fq2-4J-dVU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZjX-tr-Gg4"/>
+                <constraint firstAttribute="trailing" secondItem="Fq2-4J-dVU" secondAttribute="trailing" id="lvc-Lj-bhL"/>
+                <constraint firstAttribute="bottom" secondItem="Fq2-4J-dVU" secondAttribute="bottom" id="wRk-Z4-c9v"/>
+                <constraint firstItem="qnh-hg-1m1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zs7-zQ-kpq"/>
+            </constraints>
+            <size key="customSize" width="263" height="291"/>
+            <connections>
+                <outlet property="imageView" destination="qnh-hg-1m1" id="WVt-RH-8gc"/>
+                <outlet property="nameLabel" destination="Fq2-4J-dVU" id="Wxh-My-FOx"/>
+            </connections>
+            <point key="canvasLocation" x="286.23188405797106" y="175.11160714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>

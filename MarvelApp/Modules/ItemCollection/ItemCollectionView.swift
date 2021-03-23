@@ -10,6 +10,9 @@
 import UIKit
 
 class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
+    
+    // MARK: - Outlets
+    @IBOutlet weak var collectionView: UICollectionView!
 
 	var presenter: ItemCollectionPresenterContract!
 
