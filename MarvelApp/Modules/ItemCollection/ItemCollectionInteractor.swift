@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract {
     weak var output: ItemCollectionInteractorOutputContract!
@@ -16,5 +17,23 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
     
     init (provider: MarvelNetworkProvider) {
         self.networkProvider = provider
+    }
+    
+    // MARK: - Public Methods
+    func getCharacterList() -> Promise<[CellItemContract]> {
+        return Promise<[CellItemContract]> { promise in
+            firstly {
+                self.getCharacterList()
+            }.done { characterList in
+                var cellItemList = [CellItemContract]()
+                for item in characterList {
+                    cellItemList.append(item)
+                }
+                promise.fulfill(cellItemList)
+            }.catch { error in
+                #warning("TODO: Improve")
+                promise.reject(error)
+            }
+        }
     }
 }

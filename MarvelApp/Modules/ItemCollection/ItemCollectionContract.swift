@@ -32,6 +32,8 @@ protocol ItemCollectionPresenterContract: BasePresenter {
 
 protocol ItemCollectionInteractorContract: BaseInteractor {
     var output: ItemCollectionInteractorOutputContract! {get set}
+    
+    func getCharacterList() -> Promise<[CellItemContract]>
 }
 
 protocol ItemCollectionInteractorOutputContract: class {
