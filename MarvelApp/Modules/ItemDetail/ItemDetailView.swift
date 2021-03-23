@@ -10,7 +10,13 @@
 import UIKit
 
 class ItemDetailView: BaseViewController, ItemDetailViewContract {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var comicsTableView: UITableView!
+    
 	var presenter: ItemDetailPresenterContract!
 
 	// MARK: - LifeCycle
