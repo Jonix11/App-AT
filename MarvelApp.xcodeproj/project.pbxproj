@@ -43,6 +43,14 @@
 		AC39820A260A488800E4CC44 /* ItemCollectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */; };
 		AC95C95A260A6B18000F0927 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */; };
 		AC95C95B260A6B18000F0927 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */; };
+		AC95C973260A7666000F0927 /* ItemDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96B260A7666000F0927 /* ItemDetailContract.swift */; };
+		AC95C974260A7666000F0927 /* ItemDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96C260A7666000F0927 /* ItemDetailPresenter.swift */; };
+		AC95C975260A7666000F0927 /* ItemDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96D260A7666000F0927 /* ItemDetailBuilder.swift */; };
+		AC95C976260A7666000F0927 /* ItemDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96E260A7666000F0927 /* ItemDetailInteractor.swift */; };
+		AC95C977260A7666000F0927 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96F260A7666000F0927 /* ItemDetailView.swift */; };
+		AC95C978260A7666000F0927 /* ItemDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95C970260A7666000F0927 /* ItemDetailView.xib */; };
+		AC95C979260A7666000F0927 /* ItemDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C971260A7666000F0927 /* ItemDetailEntity.swift */; };
+		AC95C97A260A7666000F0927 /* ItemDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C972260A7666000F0927 /* ItemDetailWireframe.swift */; };
 		FCA9D76C4F7BD364387413E1 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD6FD2690DF3D54F97BE1D7 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +113,14 @@
 		AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionWireframe.swift; sourceTree = "<group>"; };
 		AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		AC95C96B260A7666000F0927 /* ItemDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContract.swift; sourceTree = "<group>"; };
+		AC95C96C260A7666000F0927 /* ItemDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailPresenter.swift; sourceTree = "<group>"; };
+		AC95C96D260A7666000F0927 /* ItemDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailBuilder.swift; sourceTree = "<group>"; };
+		AC95C96E260A7666000F0927 /* ItemDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInteractor.swift; sourceTree = "<group>"; };
+		AC95C96F260A7666000F0927 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		AC95C970260A7666000F0927 /* ItemDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailView.xib; sourceTree = "<group>"; };
+		AC95C971260A7666000F0927 /* ItemDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailEntity.swift; sourceTree = "<group>"; };
+		AC95C972260A7666000F0927 /* ItemDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailWireframe.swift; sourceTree = "<group>"; };
 		C803A39A1F8AFE3F73A10C01 /* Pods-MarvelAppTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		DCE8E8DFD30540FE668E7D71 /* Pods-MarvelAppTests.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug (development).xcconfig"; sourceTree = "<group>"; };
 		F7E708EBD7FBB3A5149B9EC4 /* Pods_MarvelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +253,7 @@
 				AC3981862607610500E4CC44 /* BASE */,
 				AC3981A5260763C100E4CC44 /* CharacterList */,
 				AC3981FA260A485800E4CC44 /* ItemCollection */,
+				AC95C96A260A764B000F0927 /* ItemDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -302,8 +319,31 @@
 		AC39820D260A48A200E4CC44 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				AC398200260A488800E4CC44 /* ItemCollectionView.xib */,
 				AC3016A5260A61C500CFB404 /* CollectionViewCell */,
+				AC398200260A488800E4CC44 /* ItemCollectionView.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AC95C96A260A764B000F0927 /* ItemDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AC95C96D260A7666000F0927 /* ItemDetailBuilder.swift */,
+				AC95C96B260A7666000F0927 /* ItemDetailContract.swift */,
+				AC95C971260A7666000F0927 /* ItemDetailEntity.swift */,
+				AC95C96E260A7666000F0927 /* ItemDetailInteractor.swift */,
+				AC95C96C260A7666000F0927 /* ItemDetailPresenter.swift */,
+				AC95C96F260A7666000F0927 /* ItemDetailView.swift */,
+				AC95C972260A7666000F0927 /* ItemDetailWireframe.swift */,
+				AC95C97D260A76B5000F0927 /* UI */,
+			);
+			path = ItemDetail;
+			sourceTree = "<group>";
+		};
+		AC95C97D260A76B5000F0927 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AC95C970260A7666000F0927 /* ItemDetailView.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -409,6 +449,7 @@
 			files = (
 				AC3980C8260666F900E4CC44 /* LaunchScreen.storyboard in Resources */,
 				AC398177260683A800E4CC44 /* NetworkInfo.plist in Resources */,
+				AC95C978260A7666000F0927 /* ItemDetailView.xib in Resources */,
 				AC95C95B260A6B18000F0927 /* ItemCollectionViewCell.xib in Resources */,
 				AC3981B3260763DF00E4CC44 /* CharacterListView.xib in Resources */,
 				AC398208260A488800E4CC44 /* ItemCollectionView.xib in Resources */,
@@ -515,8 +556,11 @@
 				AC3981AF260763DF00E4CC44 /* CharacterListPresenter.swift in Sources */,
 				AC398204260A488800E4CC44 /* ItemCollectionPresenter.swift in Sources */,
 				AC3981B5260763DF00E4CC44 /* CharacterListWireframe.swift in Sources */,
+				AC95C977260A7666000F0927 /* ItemDetailView.swift in Sources */,
+				AC95C979260A7666000F0927 /* ItemDetailEntity.swift in Sources */,
 				AC39818E2607611700E4CC44 /* BaseWireframe.swift in Sources */,
 				AC39818F2607611700E4CC44 /* BasePresenter.swift in Sources */,
+				AC95C97A260A7666000F0927 /* ItemDetailWireframe.swift in Sources */,
 				AC3981592606768500E4CC44 /* NetworkConstants.swift in Sources */,
 				AC3981442606735D00E4CC44 /* MarvelNetworkProvider.swift in Sources */,
 				AC3980BC260666F800E4CC44 /* AppDelegate.swift in Sources */,
@@ -530,6 +574,9 @@
 				AC3981B4260763DF00E4CC44 /* CharacterListEntity.swift in Sources */,
 				AC3981952607614300E4CC44 /* UIViewControllerExtension.swift in Sources */,
 				AC39818D2607611700E4CC44 /* BaseViewController.swift in Sources */,
+				AC95C976260A7666000F0927 /* ItemDetailInteractor.swift in Sources */,
+				AC95C974260A7666000F0927 /* ItemDetailPresenter.swift in Sources */,
+				AC95C973260A7666000F0927 /* ItemDetailContract.swift in Sources */,
 				AC3981B2260763DF00E4CC44 /* CharacterListView.swift in Sources */,
 				AC3981B1260763DF00E4CC44 /* CharacterListInteractor.swift in Sources */,
 				AC3981B0260763DF00E4CC44 /* CharacterListBuilder.swift in Sources */,
@@ -538,6 +585,7 @@
 				AC398207260A488800E4CC44 /* ItemCollectionView.swift in Sources */,
 				AC398139260671DB00E4CC44 /* Character.swift in Sources */,
 				AC398203260A488800E4CC44 /* ItemCollectionContract.swift in Sources */,
+				AC95C975260A7666000F0927 /* ItemDetailBuilder.swift in Sources */,
 				AC39818C2607611700E4CC44 /* BaseInteractor.swift in Sources */,
 				AC398206260A488800E4CC44 /* ItemCollectionInteractor.swift in Sources */,
 			);
