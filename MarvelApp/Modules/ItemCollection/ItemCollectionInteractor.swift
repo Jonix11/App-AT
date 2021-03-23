@@ -14,6 +14,7 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
     weak var output: ItemCollectionInteractorOutputContract!
 
     var networkProvider: MarvelNetworkProvider
+    var characterList = [Character]()
     
     init (provider: MarvelNetworkProvider) {
         self.networkProvider = provider
@@ -25,6 +26,7 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
             firstly {
                 self.networkProvider.getCharacters()
             }.done { characterList in
+                self.characterList = characterList
                 var cellItemList = [CellItemContract]()
                 for item in characterList {
                     cellItemList.append(item)
@@ -35,5 +37,9 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
                 promise.reject(error)
             }
         }
+    }
+    
+    func returnCharacter(at index: Int) -> ItemDetailContract {
+        return self.characterList[index]
     }
 }

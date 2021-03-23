@@ -31,12 +31,14 @@ protocol ItemCollectionPresenterContract: BasePresenter {
     func viewDidLoad()
     func viewWillAppear()
     func getCharacterList()
+    func characterSelected(at index: Int)
 }
 
 protocol ItemCollectionInteractorContract: BaseInteractor {
     var output: ItemCollectionInteractorOutputContract! {get set}
     
     func getCharacterList() -> Promise<[CellItemContract]>
+    func returnCharacter(at index: Int) -> ItemDetailContract
 }
 
 protocol ItemCollectionInteractorOutputContract: class {
@@ -46,6 +48,8 @@ protocol ItemCollectionInteractorOutputContract: class {
 protocol ItemCollectionWireframeContract: BaseWireframe {
     var output: ItemCollectionWireframeOutputContract! { get set }
     var view: UIViewController! { get set }
+    
+    func showDetailView(with character: ItemDetailContract)
 }
 
 protocol ItemCollectionWireframeOutputContract: class {

@@ -51,6 +51,7 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
         
         collectionView.dataSource = datasource
         collectionView.delegate = delegate
+        delegate.presenter = presenter
         
         let width = calculateCellWidth()
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -96,5 +97,9 @@ class ItemCollectionDatasource: NSObject, UICollectionViewDataSource {
 }
 
 class ItemCollectionDelegate: NSObject, UICollectionViewDelegate {
+    weak var presenter: ItemCollectionPresenterContract!
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.characterSelected(at: indexPath.item)
+    }
 }

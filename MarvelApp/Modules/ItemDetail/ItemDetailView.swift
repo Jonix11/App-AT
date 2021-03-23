@@ -76,5 +76,7 @@ class ComicsTableViewDatasource: NSObject, UITableViewDataSource {
 }
 
 class ComicsTableViewDelegate: NSObject, UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30
+    }
 }

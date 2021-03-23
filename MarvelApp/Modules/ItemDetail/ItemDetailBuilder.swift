@@ -11,14 +11,14 @@ import UIKit
 
 class ItemDetailBuilder {
 
-    static func build() -> ItemDetailView {
+    static func build(character: ItemDetailContract) -> ItemDetailView {
         let view = ItemDetailView.init(nibName: String(describing: ItemDetailView.self), bundle: nil)
         let presenter = ItemDetailPresenter()
         let entity = ItemDetailEntity()
         let wireframe = ItemDetailWireframe()
         
         let provider = MarvelNetworkProvider()
-        let interactor = ItemDetailInteractor(provider: provider, character: ItemDetailContract)
+        let interactor = ItemDetailInteractor(provider: provider, character: character)
         
         view.presenter = presenter
         view.presenter.view = view
