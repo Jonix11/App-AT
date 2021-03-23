@@ -1,5 +1,5 @@
 //
-//  itemCollectionViewCell.swift
+//  ItemCollectionViewCell.swift
 //  MarvelApp
 //
 //  Created by Jon Gonzalez on 23/3/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class itemCollectionViewCell: UICollectionViewCell {
+class ItemCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
