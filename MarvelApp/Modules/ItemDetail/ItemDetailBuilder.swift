@@ -18,7 +18,7 @@ class ItemDetailBuilder {
         let wireframe = ItemDetailWireframe()
         
         let provider = MarvelNetworkProvider()
-        let interactor = ItemDetailInteractor(provider: provider)
+        let interactor = ItemDetailInteractor(provider: provider, character: ItemDetailContract)
         
         view.presenter = presenter
         view.presenter.view = view

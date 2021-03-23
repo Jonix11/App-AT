@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ItemDetailView: BaseViewController, ItemDetailViewContract {
     
@@ -16,6 +17,10 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var comicsTableView: UITableView!
+    
+    // MARK: - Properties
+    var datasource: ComicsTableViewDatasource!
+    var delegate: ComicsTableViewDelegate!
     
 	var presenter: ItemDetailPresenterContract!
 
@@ -32,6 +37,44 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
     }
 
     private func setupView() {
-
+        datasource = ComicsTableViewDatasource()
+        delegate = ComicsTableViewDelegate()
+        
+        comicsTableView.dataSource = datasource
+        comicsTableView.delegate = delegate
     }
+    
+    // MARK: - Public Methods
+    func loadDataInView(with character: ItemDetailContract) {
+        itemImage.sd_setImage(with: character.itemImage, placeholderImage: UIImage(named: "NotImage"))
+        nameLabel.text = character.itemName
+        descriptionTextView.text = character.itemDescription
+        datasource.comicList = character.itemComics
+        comicsTableView.reloadData()
+        
+    }
+}
+
+class ComicsTableViewDatasource: NSObject, UITableViewDataSource {
+    
+    var comicList = [String]()
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comicList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let reuseId = "ComicCell"
+        let comic = comicList[indexPath.row]
+        let cell = UITableViewCell(style: .default, reuseIdentifier: reuseId)
+        
+        cell.textLabel?.text = comic
+        
+        return cell
+    }
+    
+}
+
+class ComicsTableViewDelegate: NSObject, UITableViewDelegate {
+    
 }

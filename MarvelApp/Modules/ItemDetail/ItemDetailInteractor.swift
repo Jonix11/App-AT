@@ -13,8 +13,15 @@ class ItemDetailInteractor: BaseInteractor, ItemDetailInteractorContract {
     weak var output: ItemDetailInteractorOutputContract!
 
     var networkProvider: MarvelNetworkProvider
+    var character: ItemDetailContract
     
-    init (provider: MarvelNetworkProvider) {
+    init (provider: MarvelNetworkProvider, character: ItemDetailContract) {
         self.networkProvider = provider
+        self.character = character
+    }
+    
+    // MARK: - Public Methods
+    func retrieveCharacterDetail() -> ItemDetailContract {
+        return character
     }
 }

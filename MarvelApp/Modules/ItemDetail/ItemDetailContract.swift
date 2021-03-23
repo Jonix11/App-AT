@@ -18,6 +18,8 @@ protocol ItemDetailEntityContract: BaseEntity {
 protocol ItemDetailViewContract: BaseViewController {
     var presenter: ItemDetailPresenterContract! { get set }
     
+    func loadDataInView(with character: ItemDetailContract)
+    
 }
 
 protocol ItemDetailPresenterContract: BasePresenter {
@@ -28,10 +30,13 @@ protocol ItemDetailPresenterContract: BasePresenter {
 
     func viewDidLoad()
     func viewWillAppear()
+    func getCharacterDetail()
 }
 
 protocol ItemDetailInteractorContract: BaseInteractor {
     var output: ItemDetailInteractorOutputContract! {get set}
+    
+    func retrieveCharacterDetail() -> ItemDetailContract
 }
 
 protocol ItemDetailInteractorOutputContract: class {

@@ -16,12 +16,18 @@ class ItemDetailPresenter: BasePresenter, ItemDetailPresenterContract {
     var entity: ItemDetailEntityContract!
     var wireframe: ItemDetailWireframeContract!
 
+    // MARK: - Public Methods
     func viewDidLoad() {
 
     }
 
     func viewWillAppear() {
-
+        self.getCharacterDetail()
+    }
+    
+    func getCharacterDetail() {
+        let character = self.interactor.retrieveCharacterDetail()
+        self.view.loadDataInView(with: character)
     }
 }
 
