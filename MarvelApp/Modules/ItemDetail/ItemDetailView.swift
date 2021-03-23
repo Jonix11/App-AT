@@ -9,6 +9,7 @@
 
 import UIKit
 import SDWebImage
+import SnapKit
 
 class ItemDetailView: BaseViewController, ItemDetailViewContract {
     
@@ -20,6 +21,7 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
     
     // MARK: - Properties
     var datasource: ComicsTableViewDatasource!
+    // swiftlint:disable:next weak_delegate
     var delegate: ComicsTableViewDelegate!
     
 	var presenter: ItemDetailPresenterContract!
@@ -51,6 +53,12 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
         descriptionTextView.text = character.itemDescription
         datasource.comicList = character.itemComics
         comicsTableView.reloadData()
+        
+        let height = character.itemComics.count * 30
+        
+        comicsTableView.snp.makeConstraints { make -> Void in
+            make.height.equalTo(height)
+        }
         
     }
 }
