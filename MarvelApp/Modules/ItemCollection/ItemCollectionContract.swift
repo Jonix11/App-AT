@@ -18,6 +18,8 @@ protocol ItemCollectionEntityContract: BaseEntity {
 protocol ItemCollectionViewContract: BaseViewController {
     var presenter: ItemCollectionPresenterContract! { get set }
     
+    func updateCharacterListData(with character: [CellItemContract])
+    
 }
 
 protocol ItemCollectionPresenterContract: BasePresenter {
@@ -28,6 +30,7 @@ protocol ItemCollectionPresenterContract: BasePresenter {
 
     func viewDidLoad()
     func viewWillAppear()
+    func getCharacterList()
 }
 
 protocol ItemCollectionInteractorContract: BaseInteractor {

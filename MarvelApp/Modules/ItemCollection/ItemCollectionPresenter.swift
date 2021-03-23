@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class ItemCollectionPresenter: BasePresenter, ItemCollectionPresenterContract {
 
@@ -16,15 +17,25 @@ class ItemCollectionPresenter: BasePresenter, ItemCollectionPresenterContract {
     var entity: ItemCollectionEntityContract!
     var wireframe: ItemCollectionWireframeContract!
 
+    // MARK: - Public Methods
     func viewDidLoad() {
 
     }
 
     func viewWillAppear() {
-
+        self.getCharacterList()
+    }
+    
+    func getCharacterList() {
+        firstly {
+            self.interactor.getCharacterList()
+        }.done { [weak self] characterList in
+            self?.view.updateCharacterListData(with: characterList)
+        }.catch { [weak self] error in
+            
+        }
     }
 }
-
 
 // MARK: - ItemCollectionInteractorOutputContract
 extension ItemCollectionPresenter: ItemCollectionInteractorOutputContract {

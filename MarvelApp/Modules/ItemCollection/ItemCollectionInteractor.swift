@@ -23,7 +23,7 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
     func getCharacterList() -> Promise<[CellItemContract]> {
         return Promise<[CellItemContract]> { promise in
             firstly {
-                self.getCharacterList()
+                self.networkProvider.getCharacters()
             }.done { characterList in
                 var cellItemList = [CellItemContract]()
                 for item in characterList {
