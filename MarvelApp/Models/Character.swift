@@ -25,9 +25,13 @@ struct Character: ImmutableMappable {
     }
 }
 
-enum ImageDictionary: String {
-    case path = "path"
-    case ext = "extension"
+enum ImageDictionary {
+    static let path = "path"
+    static let ext = "extension"
+}
+
+enum ComicsDictionary {
+    static let name = "name"
 }
 
 extension Character: CellItemContract {
@@ -40,8 +44,8 @@ extension Character: CellItemContract {
     }
 
     var itemImage: URL? {
-        let path = self.image[ImageDictionary.path.rawValue]
-        let ext = self.image[ImageDictionary.ext.rawValue]
+        let path = self.image[ImageDictionary.path]
+        let ext = self.image[ImageDictionary.ext]
         if let strPath = path,
            let strExt = ext {
             let strURL = strPath + strExt
@@ -50,4 +54,22 @@ extension Character: CellItemContract {
             return nil
         }
     }
+}
+
+extension Character: ItemDetailContract {
+    var itemDescription: String {
+        return description
+    }
+    
+    var itemComics: [String] {
+        var arrayComics = [String]()
+        for comic in self.comics {
+            if let comicStr = comic[ComicsDictionary.name] {
+                arrayComics.append(comicStr)
+            }
+        }
+        return arrayComics
+    }
+    
+    
 }
