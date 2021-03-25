@@ -10,7 +10,22 @@
 import UIKit
 
 class RegisterFormView: BaseViewController, RegisterFormViewContract {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    
+    // MARK: - Actions
+    @IBAction func registerButtonClicked(_ sender: Any) {
+    }
+    
+    // MARK: - Properties
+    // swiftlint:disable:next weak_delegate
+    private var textFieldDelegate = FormTextFieldDelegate()
+    
 	var presenter: RegisterFormPresenterContract!
 
 	// MARK: - LifeCycle
@@ -26,6 +41,15 @@ class RegisterFormView: BaseViewController, RegisterFormViewContract {
     }
 
     private func setupView() {
-
+        let textFields = [nameTextField, lastnameTextField, emailTextField, passwordTextField, repeatPasswordTextField]
+        for (index, textField) in textFields.enumerated() {
+            textField?.tag = index
+            textField?.delegate = textFieldDelegate
+        }
+        
     }
+}
+
+class FormTextFieldDelegate: NSObject, UITextFieldDelegate {
+    
 }

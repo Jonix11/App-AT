@@ -25,7 +25,6 @@ class RegisterFormPresenter: BasePresenter, RegisterFormPresenterContract {
     }
 }
 
-
 // MARK: - RegisterFormInteractorOutputContract
 extension RegisterFormPresenter: RegisterFormInteractorOutputContract {
     
