@@ -46,6 +46,7 @@ class MarvelNetworkProvider: MarvelProviderContract {
                 guard let data = try? response.result.get() as? [String: Any],
                       let dataResultData = data["data"] as? [String: Any],
                       let result = dataResultData["results"] as? [[String: Any]] else {
+                    #warning("TODO: add promise.reject with error")
                     return
                 }
                 promise.fulfill(result)
