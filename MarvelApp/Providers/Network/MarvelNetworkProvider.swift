@@ -34,7 +34,7 @@ class MarvelNetworkProvider: MarvelProviderContract {
     private func getURL(endpoint: MarvelURLEndpoint) -> URL {
         switch endpoint {
         case .characters:
-            var url = NetworkConstants.getInitialURL()
+            var url = NetworkConstants.getMarvelInitialURL()
             url.appendPathComponent("characters/")
             return url
         }

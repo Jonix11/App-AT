@@ -8,7 +8,7 @@
 import Foundation
 
 struct NetworkConstants {
-    static func getInitialURL() -> URL {
+    static func getMarvelInitialURL() -> URL {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "gateway.marvel.com"
