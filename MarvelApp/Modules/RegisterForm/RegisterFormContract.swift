@@ -28,6 +28,7 @@ protocol RegisterFormPresenterContract: BasePresenter {
 
     func viewDidLoad()
     func viewWillAppear()
+    func registerButtonPressed(with name: String?, lastname: String?, email: String?, password: String?, repeatPassword: String?)
 }
 
 protocol RegisterFormInteractorContract: BaseInteractor {

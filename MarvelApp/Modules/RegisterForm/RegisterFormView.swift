@@ -20,6 +20,11 @@ class RegisterFormView: BaseViewController, RegisterFormViewContract {
     
     // MARK: - Actions
     @IBAction func registerButtonClicked(_ sender: Any) {
+        presenter.registerButtonPressed(with: nameTextField.text,
+                                        lastname: lastnameTextField.text,
+                                        email: emailTextField.text,
+                                        password: passwordTextField.text,
+                                        repeatPassword: repeatPasswordTextField.text)
     }
     
     // MARK: - Properties
@@ -39,6 +44,10 @@ class RegisterFormView: BaseViewController, RegisterFormViewContract {
         super.viewWillAppear(animated)
         self.presenter.viewWillAppear()
     }
+    // En caso de que haga tap en la view, ocultar el teclado
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     private func setupView() {
         let textFields = [nameTextField, lastnameTextField, emailTextField, passwordTextField, repeatPasswordTextField]
@@ -46,10 +55,33 @@ class RegisterFormView: BaseViewController, RegisterFormViewContract {
             textField?.tag = index
             textField?.delegate = textFieldDelegate
         }
+        textFieldDelegate.presenter = self.presenter
         
     }
 }
 
 class FormTextFieldDelegate: NSObject, UITextFieldDelegate {
+    weak var presenter: RegisterFormPresenterContract!
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        if let nextTextField = textField.superview?.viewWithTag(nextTag) {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            if text.isEmpty {
+                textField.layer.borderWidth = 1
+                textField.layer.borderColor = UIColor.red.cgColor
+            } else {
+                textField.layer.borderWidth = 0
+            }
+        }
+    }
 }
