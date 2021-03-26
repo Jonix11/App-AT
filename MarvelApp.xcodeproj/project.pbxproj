@@ -59,6 +59,7 @@
 		AC95C9A7260D0B8B000F0927 /* RegisterFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95C99F260D0B8B000F0927 /* RegisterFormView.xib */; };
 		AC95C9A8260D0B8B000F0927 /* RegisterFormEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9A0260D0B8B000F0927 /* RegisterFormEntity.swift */; };
 		AC95C9A9260D0B8B000F0927 /* RegisterFormWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9A1260D0B8B000F0927 /* RegisterFormWireframe.swift */; };
+		AC95C9B1260D274F000F0927 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9B0260D274F000F0927 /* StringExtension.swift */; };
 		FCA9D76C4F7BD364387413E1 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD6FD2690DF3D54F97BE1D7 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +138,7 @@
 		AC95C99F260D0B8B000F0927 /* RegisterFormView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterFormView.xib; sourceTree = "<group>"; };
 		AC95C9A0260D0B8B000F0927 /* RegisterFormEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormEntity.swift; sourceTree = "<group>"; };
 		AC95C9A1260D0B8B000F0927 /* RegisterFormWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormWireframe.swift; sourceTree = "<group>"; };
+		AC95C9B0260D274F000F0927 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C803A39A1F8AFE3F73A10C01 /* Pods-MarvelAppTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		DCE8E8DFD30540FE668E7D71 /* Pods-MarvelAppTests.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug (development).xcconfig"; sourceTree = "<group>"; };
 		F7E708EBD7FBB3A5149B9EC4 /* Pods_MarvelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +292,7 @@
 		AC3981932607613100E4CC44 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AC95C9B0260D274F000F0927 /* StringExtension.swift */,
 				AC3981942607614300E4CC44 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
@@ -606,6 +609,7 @@
 				AC95C97A260A7666000F0927 /* ItemDetailWireframe.swift in Sources */,
 				AC3981592606768500E4CC44 /* NetworkConstants.swift in Sources */,
 				AC3981442606735D00E4CC44 /* MarvelNetworkProvider.swift in Sources */,
+				AC95C9B1260D274F000F0927 /* StringExtension.swift in Sources */,
 				AC3980BC260666F800E4CC44 /* AppDelegate.swift in Sources */,
 				AC398205260A488800E4CC44 /* ItemCollectionBuilder.swift in Sources */,
 				AC39811D26066D3F00E4CC44 /* Environment.swift in Sources */,
