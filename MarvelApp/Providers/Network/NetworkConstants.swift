@@ -8,6 +8,17 @@
 import Foundation
 
 struct NetworkConstants {
+    
+    static func getHttpbinInitialURL() -> URL {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "httpbin.org"
+        
+        // Como la URL la estoy creando yo y en caso de que se forme de forma incorrecta o no sea la URL
+        // que necesito quiero que me falle, hago el unwrap forzado.
+        return components.url!
+    }
+    
     static func getMarvelInitialURL() -> URL {
         var components = URLComponents()
         components.scheme = "https"
