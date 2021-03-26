@@ -18,6 +18,8 @@ protocol RegisterFormEntityContract: BaseEntity {
 protocol RegisterFormViewContract: BaseViewController {
     var presenter: RegisterFormPresenterContract! { get set }
     
+    func resetTextFieldsContent()
+    
 }
 
 protocol RegisterFormPresenterContract: BasePresenter {

@@ -63,7 +63,7 @@ class RegisterFormPresenter: BasePresenter, RegisterFormPresenterContract {
                             self?.wireframe.showCustomModalAlert(self?.view,
                                                                  title: "User Created",
                                                                  content: "User created correctly.",
-                                                                 completion: nil)
+                                                                 completion: self?.view.resetTextFieldsContent)
                         }.catch { error in
                             #warning("TODO: Improve")
                         }

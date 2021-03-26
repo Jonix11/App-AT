@@ -56,7 +56,12 @@ class RegisterFormView: BaseViewController, RegisterFormViewContract {
             textField?.delegate = textFieldDelegate
         }
         textFieldDelegate.presenter = self.presenter
-        
+    }
+    
+    // MARK: - Public Methods
+    func resetTextFieldsContent() {
+        let textFields = [nameTextField, lastnameTextField, emailTextField, passwordTextField, repeatPasswordTextField]
+        textFields.forEach { $0?.text = "" }
     }
 }
 
