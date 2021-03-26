@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class RegisterFormPresenter: BasePresenter, RegisterFormPresenterContract {
 
@@ -50,7 +51,22 @@ class RegisterFormPresenter: BasePresenter, RegisterFormPresenterContract {
                                                        content: "The passwords do not match.",
                                                        completion: nil)
                     } else {
-                        #warning("Petición POST a httpbin")
+                        let fullname = "\(name) \(lastname)"
+                        let data = [
+                            "fullname": fullname,
+                            "email": email,
+                            "password": password
+                        ]
+                        firstly {
+                            self.interactor.createUser(with: data)
+                        }.done { [weak self] in
+                            self?.wireframe.showCustomModalAlert(self?.view,
+                                                                 title: "User Created",
+                                                                 content: "User created correctly.",
+                                                                 completion: nil)
+                        }.catch { error in
+                            #warning("TODO: Improve")
+                        }
                     }
                 }
             }

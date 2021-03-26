@@ -8,13 +8,29 @@
 //
 
 import Foundation
+import PromiseKit
 
 class RegisterFormInteractor: BaseInteractor, RegisterFormInteractorContract {
+    
     weak var output: RegisterFormInteractorOutputContract!
 
-    var networkProvider: MarvelNetworkProvider
+    var networkProvider: HttpbinProviderContract
     
-    init (provider: MarvelNetworkProvider) {
+    init (provider: HttpbinProviderContract) {
         self.networkProvider = provider
+    }
+    
+    // MARK: - Public Methods
+    func createUser(with data: [String : String]) -> Promise<Void> {
+        return Promise<Void> { promise in
+            firstly {
+                networkProvider.createUser(with: data)
+            }.done {
+                promise.fulfill(())
+            }.catch { error in
+                #warning("TODO: Improve")
+                promise.reject(error)
+            }
+        }
     }
 }

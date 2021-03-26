@@ -33,6 +33,8 @@ protocol RegisterFormPresenterContract: BasePresenter {
 
 protocol RegisterFormInteractorContract: BaseInteractor {
     var output: RegisterFormInteractorOutputContract! {get set}
+    
+    func createUser(with data: [String: String]) -> Promise<Void>
 }
 
 protocol RegisterFormInteractorOutputContract: class {

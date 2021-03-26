@@ -17,7 +17,7 @@ class RegisterFormBuilder {
         let entity = RegisterFormEntity()
         let wireframe = RegisterFormWireframe()
         
-        let provider = MarvelNetworkProvider()
+        let provider = HttpbinNetworkProvider()
         let interactor = RegisterFormInteractor(provider: provider)
         
         view.presenter = presenter
