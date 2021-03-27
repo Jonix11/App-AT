@@ -61,6 +61,14 @@
 		AC95C9A9260D0B8B000F0927 /* RegisterFormWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9A1260D0B8B000F0927 /* RegisterFormWireframe.swift */; };
 		AC95C9B1260D274F000F0927 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9B0260D274F000F0927 /* StringExtension.swift */; };
 		AC95C9B9260E4FDB000F0927 /* HttpbinNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */; };
+		AC95CA23260F4F1E000F0927 /* ImageSelectorContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA1B260F4F1E000F0927 /* ImageSelectorContract.swift */; };
+		AC95CA24260F4F1E000F0927 /* ImageSelectorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA1C260F4F1E000F0927 /* ImageSelectorPresenter.swift */; };
+		AC95CA25260F4F1E000F0927 /* ImageSelectorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA1D260F4F1E000F0927 /* ImageSelectorBuilder.swift */; };
+		AC95CA26260F4F1E000F0927 /* ImageSelectorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA1E260F4F1E000F0927 /* ImageSelectorInteractor.swift */; };
+		AC95CA27260F4F1E000F0927 /* ImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA1F260F4F1E000F0927 /* ImageSelectorView.swift */; };
+		AC95CA28260F4F1E000F0927 /* ImageSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95CA20260F4F1E000F0927 /* ImageSelectorView.xib */; };
+		AC95CA29260F4F1E000F0927 /* ImageSelectorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA21260F4F1E000F0927 /* ImageSelectorEntity.swift */; };
+		AC95CA2A260F4F1E000F0927 /* ImageSelectorWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA22260F4F1E000F0927 /* ImageSelectorWireframe.swift */; };
 		FCA9D76C4F7BD364387413E1 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD6FD2690DF3D54F97BE1D7 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +149,14 @@
 		AC95C9A1260D0B8B000F0927 /* RegisterFormWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormWireframe.swift; sourceTree = "<group>"; };
 		AC95C9B0260D274F000F0927 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpbinNetworkProvider.swift; sourceTree = "<group>"; };
+		AC95CA1B260F4F1E000F0927 /* ImageSelectorContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorContract.swift; sourceTree = "<group>"; };
+		AC95CA1C260F4F1E000F0927 /* ImageSelectorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorPresenter.swift; sourceTree = "<group>"; };
+		AC95CA1D260F4F1E000F0927 /* ImageSelectorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorBuilder.swift; sourceTree = "<group>"; };
+		AC95CA1E260F4F1E000F0927 /* ImageSelectorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorInteractor.swift; sourceTree = "<group>"; };
+		AC95CA1F260F4F1E000F0927 /* ImageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorView.swift; sourceTree = "<group>"; };
+		AC95CA20260F4F1E000F0927 /* ImageSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSelectorView.xib; sourceTree = "<group>"; };
+		AC95CA21260F4F1E000F0927 /* ImageSelectorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorEntity.swift; sourceTree = "<group>"; };
+		AC95CA22260F4F1E000F0927 /* ImageSelectorWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorWireframe.swift; sourceTree = "<group>"; };
 		C803A39A1F8AFE3F73A10C01 /* Pods-MarvelAppTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		DCE8E8DFD30540FE668E7D71 /* Pods-MarvelAppTests.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug (development).xcconfig"; sourceTree = "<group>"; };
 		F7E708EBD7FBB3A5149B9EC4 /* Pods_MarvelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +289,7 @@
 			children = (
 				AC3981862607610500E4CC44 /* BASE */,
 				AC3981A5260763C100E4CC44 /* CharacterList */,
+				AC95CA1A260F4F0D000F0927 /* ImageSelector */,
 				AC3981FA260A485800E4CC44 /* ItemCollection */,
 				AC95C96A260A764B000F0927 /* ItemDetail */,
 				AC95C999260D0B6B000F0927 /* RegisterForm */,
@@ -394,6 +411,29 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		AC95CA1A260F4F0D000F0927 /* ImageSelector */ = {
+			isa = PBXGroup;
+			children = (
+				AC95CA1D260F4F1E000F0927 /* ImageSelectorBuilder.swift */,
+				AC95CA1B260F4F1E000F0927 /* ImageSelectorContract.swift */,
+				AC95CA21260F4F1E000F0927 /* ImageSelectorEntity.swift */,
+				AC95CA1E260F4F1E000F0927 /* ImageSelectorInteractor.swift */,
+				AC95CA1C260F4F1E000F0927 /* ImageSelectorPresenter.swift */,
+				AC95CA1F260F4F1E000F0927 /* ImageSelectorView.swift */,
+				AC95CA22260F4F1E000F0927 /* ImageSelectorWireframe.swift */,
+				AC95CA2F260F4FD9000F0927 /* UI */,
+			);
+			path = ImageSelector;
+			sourceTree = "<group>";
+		};
+		AC95CA2F260F4FD9000F0927 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AC95CA20260F4F1E000F0927 /* ImageSelectorView.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		FC62858CBB86ED23D03DAEBB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +533,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC95CA28260F4F1E000F0927 /* ImageSelectorView.xib in Resources */,
 				AC3980C8260666F900E4CC44 /* LaunchScreen.storyboard in Resources */,
 				AC95C9A7260D0B8B000F0927 /* RegisterFormView.xib in Resources */,
 				AC398177260683A800E4CC44 /* NetworkInfo.plist in Resources */,
@@ -605,7 +646,9 @@
 				AC3981B5260763DF00E4CC44 /* CharacterListWireframe.swift in Sources */,
 				AC95C977260A7666000F0927 /* ItemDetailView.swift in Sources */,
 				AC95C9A3260D0B8B000F0927 /* RegisterFormPresenter.swift in Sources */,
+				AC95CA23260F4F1E000F0927 /* ImageSelectorContract.swift in Sources */,
 				AC95C979260A7666000F0927 /* ItemDetailEntity.swift in Sources */,
+				AC95CA25260F4F1E000F0927 /* ImageSelectorBuilder.swift in Sources */,
 				AC95C9A4260D0B8B000F0927 /* RegisterFormBuilder.swift in Sources */,
 				AC39818E2607611700E4CC44 /* BaseWireframe.swift in Sources */,
 				AC39818F2607611700E4CC44 /* BasePresenter.swift in Sources */,
@@ -621,6 +664,7 @@
 				AC398209260A488800E4CC44 /* ItemCollectionEntity.swift in Sources */,
 				AC3980BE260666F800E4CC44 /* SceneDelegate.swift in Sources */,
 				AC3981AE260763DF00E4CC44 /* CharacterListContract.swift in Sources */,
+				AC95CA26260F4F1E000F0927 /* ImageSelectorInteractor.swift in Sources */,
 				AC95C9A8260D0B8B000F0927 /* RegisterFormEntity.swift in Sources */,
 				AC3981B4260763DF00E4CC44 /* CharacterListEntity.swift in Sources */,
 				AC3981952607614300E4CC44 /* UIViewControllerExtension.swift in Sources */,
@@ -637,10 +681,14 @@
 				AC3981CD2607B2EA00E4CC44 /* ModelContract.swift in Sources */,
 				AC39820A260A488800E4CC44 /* ItemCollectionWireframe.swift in Sources */,
 				AC398207260A488800E4CC44 /* ItemCollectionView.swift in Sources */,
+				AC95CA27260F4F1E000F0927 /* ImageSelectorView.swift in Sources */,
 				AC398139260671DB00E4CC44 /* Character.swift in Sources */,
 				AC398203260A488800E4CC44 /* ItemCollectionContract.swift in Sources */,
+				AC95CA29260F4F1E000F0927 /* ImageSelectorEntity.swift in Sources */,
 				AC95C975260A7666000F0927 /* ItemDetailBuilder.swift in Sources */,
+				AC95CA24260F4F1E000F0927 /* ImageSelectorPresenter.swift in Sources */,
 				AC39818C2607611700E4CC44 /* BaseInteractor.swift in Sources */,
+				AC95CA2A260F4F1E000F0927 /* ImageSelectorWireframe.swift in Sources */,
 				AC95C9A6260D0B8B000F0927 /* RegisterFormView.swift in Sources */,
 				AC95C9A5260D0B8B000F0927 /* RegisterFormInteractor.swift in Sources */,
 				AC398206260A488800E4CC44 /* ItemCollectionInteractor.swift in Sources */,
