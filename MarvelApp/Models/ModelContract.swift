@@ -12,3 +12,11 @@ protocol CellItemContract {
     var itemName: String { get }
     var itemImage: URL? { get }
 }
+
+protocol ItemDetailContract {
+    var itemId: Int { get }
+    var itemName: String { get }
+    var itemImage: URL? { get }
+    var itemDescription: String { get }
+    var itemComics: [String] { get }
+}

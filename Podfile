@@ -10,6 +10,7 @@ target 'MarvelApp' do
   pod 'PromiseKit'
   pod 'Alamofire'
   pod 'SDWebImage'
+  pod 'SnapKit'
 
   target 'MarvelAppTests' do
     inherit! :search_paths

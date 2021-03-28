@@ -35,6 +35,11 @@ class ItemCollectionPresenter: BasePresenter, ItemCollectionPresenterContract {
             
         }
     }
+    
+    func characterSelected(at index: Int) {
+        let characterDetail = self.interactor.returnCharacter(at: index)
+        self.wireframe.showDetailView(with: characterDetail)
+    }
 }
 
 // MARK: - ItemCollectionInteractorOutputContract
