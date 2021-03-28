@@ -17,7 +17,7 @@ class ImageSelectorBuilder {
         let entity = ImageSelectorEntity()
         let wireframe = ImageSelectorWireframe()
         
-        let provider = MarvelNetworkProvider()
+        let provider = PhotoLibraryProvider()
         let interactor = ImageSelectorInteractor(provider: provider)
         
         view.presenter = presenter
