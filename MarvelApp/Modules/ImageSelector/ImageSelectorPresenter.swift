@@ -28,13 +28,15 @@ class ImageSelectorPresenter: BasePresenter, ImageSelectorPresenterContract {
     
     func launchPhotoPickerView() {
         firstly {
-            interactor.tryAccessToPhotoLibrary().done { [weak self] isEnabled in
-                if isEnabled {
-                    self?.view.showPickerView()
-                } else {
-                    self?.view.askForAccessToLibrary()
-                }
+            interactor.tryAccessToPhotoLibrary()
+        }.done { [weak self] isEnabled in
+            if isEnabled {
+                self?.view.showPickerView()
+            } else {
+                self?.view.askForAccessToLibrary()
             }
+        }.catch { error in
+            #warning("TODO: error accediendo a las fotos")
         }
     }
 }
