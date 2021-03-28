@@ -15,6 +15,7 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
 
     var networkProvider: MarvelNetworkProvider
     var characterList = [Character]()
+    var characterList4Cell = [CellItemContract]()
     
     init (provider: MarvelNetworkProvider) {
         self.networkProvider = provider
@@ -24,14 +25,15 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
     func getCharacterList() -> Promise<[CellItemContract]> {
         return Promise<[CellItemContract]> { promise in
             firstly {
-                self.networkProvider.getCharacters()
+                self.networkProvider.getCharacters(withOffset: String(self.characterList.count))
             }.done { characterList in
-                self.characterList = characterList
-                var cellItemList = [CellItemContract]()
-                for item in characterList {
-                    cellItemList.append(item)
+                characterList.forEach {
+                    self.characterList.append($0)
                 }
-                promise.fulfill(cellItemList)
+                for item in characterList {
+                    self.characterList4Cell.append(item)
+                }
+                promise.fulfill(self.characterList4Cell)
             }.catch { error in
                 #warning("TODO: Improve")
                 promise.reject(error)
