@@ -19,14 +19,17 @@ class MarvelNetworkProvider: MarvelProviderContract {
         case characters
     }
     
+    enum MarvelNetworkError: Error {
+        case getInitialDataError
+    }
+    
     func getCharacters() -> Promise<[Character]> {
         return Promise<[Character]> { promise in
             self.getInitialData(fromEndpoint: .characters).done { data in
                 let characterList = self.getCharacterList(fromData: data)
                 promise.fulfill(characterList)
             }.catch { error in
-                #warning("TODO: improve")
-                promise.reject(error)
+                promise.reject(MarvelNetworkError.getInitialDataError)
             }
         }
     }
@@ -35,7 +38,7 @@ class MarvelNetworkProvider: MarvelProviderContract {
         switch endpoint {
         case .characters:
             var url = NetworkConstants.getMarvelInitialURL()
-            url.appendPathComponent("characters/")
+            url.appendPathComponent("characters")
             return url
         }
     }
@@ -46,7 +49,7 @@ class MarvelNetworkProvider: MarvelProviderContract {
                 guard let data = try? response.result.get() as? [String: Any],
                       let dataResultData = data["data"] as? [String: Any],
                       let result = dataResultData["results"] as? [[String: Any]] else {
-                    #warning("TODO: add promise.reject with error")
+                    promise.reject(MarvelNetworkError.getInitialDataError)
                     return
                 }
                 promise.fulfill(result)
