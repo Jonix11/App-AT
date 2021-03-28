@@ -10,7 +10,7 @@ import Alamofire
 import PromiseKit
 
 protocol MarvelProviderContract {
-    func getCharacters() -> Promise<[Character]>
+    func getCharacters(withOffset offset: String) -> Promise<[Character]>
 }
 
 class MarvelNetworkProvider: MarvelProviderContract {
@@ -19,33 +19,37 @@ class MarvelNetworkProvider: MarvelProviderContract {
         case characters
     }
     
-    func getCharacters() -> Promise<[Character]> {
+    enum MarvelNetworkError: Error {
+        case getInitialDataError
+    }
+    
+    func getCharacters(withOffset offset: String) -> Promise<[Character]> {
         return Promise<[Character]> { promise in
-            self.getInitialData(fromEndpoint: .characters).done { data in
+            self.getInitialData(fromEndpoint: .characters, offset: offset).done { data in
                 let characterList = self.getCharacterList(fromData: data)
                 promise.fulfill(characterList)
             }.catch { error in
-                #warning("TODO: improve")
-                promise.reject(error)
+                promise.reject(MarvelNetworkError.getInitialDataError)
             }
         }
     }
     
-    private func getURL(endpoint: MarvelURLEndpoint) -> URL {
+    private func getURL(endpoint: MarvelURLEndpoint, offset: String) -> URL {
         switch endpoint {
         case .characters:
-            var url = NetworkConstants.getInitialURL()
+            var url = NetworkConstants.getMarvelInitialURL(withOffset: offset)
             url.appendPathComponent("characters")
             return url
         }
     }
     
-    private func getInitialData(fromEndpoint endpoint: MarvelURLEndpoint) -> Promise<[[String: Any]]> {
+    private func getInitialData(fromEndpoint endpoint: MarvelURLEndpoint, offset: String) -> Promise<[[String: Any]]> {
         return Promise<[[String: Any]]> { promise in
-            AF.request(getURL(endpoint: endpoint)).responseJSON { response in
+            AF.request(getURL(endpoint: endpoint, offset: offset)).responseJSON { response in
                 guard let data = try? response.result.get() as? [String: Any],
                       let dataResultData = data["data"] as? [String: Any],
                       let result = dataResultData["results"] as? [[String: Any]] else {
+                    promise.reject(MarvelNetworkError.getInitialDataError)
                     return
                 }
                 promise.fulfill(result)
