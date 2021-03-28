@@ -19,7 +19,7 @@ struct NetworkConstants {
         return components.url!
     }
     
-    static func getMarvelInitialURL() -> URL {
+    static func getMarvelInitialURL(withOffset offset: String) -> URL {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "gateway.marvel.com"
@@ -27,7 +27,8 @@ struct NetworkConstants {
         let apiKey = URLQueryItem(name: "apikey", value: NetworkInfo.apiKey)
         let hash = URLQueryItem(name: "hash", value: NetworkInfo.hash)
         let ts = URLQueryItem(name: "ts", value: NetworkInfo.ts)
-        components.queryItems = [apiKey, hash, ts]
+        let offset = URLQueryItem(name: "offset", value: offset)
+        components.queryItems = [apiKey, hash, ts, offset]
         
         // Como la URL la estoy creando yo y en caso de que se forme de forma incorrecta o no sea la URL
         // que necesito quiero que me falle, hago el unwrap forzado.
