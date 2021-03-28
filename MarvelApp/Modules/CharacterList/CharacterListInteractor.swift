@@ -15,6 +15,7 @@ class CharacterListInteractor: BaseInteractor, CharacterListInteractorContract {
     weak var output: CharacterListInteractorOutputContract!
 
     var networkProvider: MarvelNetworkProvider
+    var characterList = [Character]()
     
     init (provider: MarvelNetworkProvider) {
         self.networkProvider = provider
@@ -23,8 +24,9 @@ class CharacterListInteractor: BaseInteractor, CharacterListInteractorContract {
     func getCharacterList() -> Promise<[CellItemContract]> {
         return Promise<[CellItemContract]> { promise in
             firstly {
-                networkProvider.getCharacters()
+                networkProvider.getCharacters(withOffset: String(self.characterList.count))
             }.done { characterList in
+                self.characterList = characterList
                 var cellCharactersList = [CellItemContract]()
                 for character in characterList {
                     cellCharactersList.append(character)
