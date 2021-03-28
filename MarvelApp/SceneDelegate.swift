@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        let vc = RegisterFormBuilder.build()
+        let vc = ImageSelectorBuilder.build()
         window?.rootViewController = vc
     }
 
