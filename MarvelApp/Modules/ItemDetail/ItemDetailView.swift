@@ -50,11 +50,23 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
     func loadDataInView(with character: ItemDetailContract) {
         itemImage.sd_setImage(with: character.itemImage, placeholderImage: UIImage(named: "NotImage"))
         nameLabel.text = character.itemName
-        descriptionTextView.text = character.itemDescription
-        datasource.comicList = character.itemComics
+        
+        if character.itemDescription.isEmpty {
+            descriptionTextView.text = "Not description available"
+        } else {
+            descriptionTextView.text = character.itemDescription
+        }
+        var comics = [String]()
+        if character.itemComics.isEmpty {
+            comics.append("This character doesn't appears in any comic")
+            datasource.comicList = comics
+        } else {
+            comics = character.itemComics
+            datasource.comicList = character.itemComics
+        }
         comicsTableView.reloadData()
         
-        let height = character.itemComics.count * 30
+        let height = comics.count * 30
         
         comicsTableView.snp.makeConstraints { make -> Void in
             make.height.equalTo(height)
