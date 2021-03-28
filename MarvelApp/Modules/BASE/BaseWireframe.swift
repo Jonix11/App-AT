@@ -125,4 +125,31 @@ class BaseWireframe {
             }
         }
     }
+    
+    /// Show a Customizable Modal Alert
+    ///
+    /// - Parameters:
+    ///   - view: current view
+    ///   - title: alert title text
+    ///   - content: alert content text
+    ///   - customActions: customActions, if this parameter is empty, by default is added a lozalicable accept button
+    ///   - completion: return a Void result on finish presentation
+    func showCustomModalAlert(_ view: UIViewController?,
+                              title: String,
+                              content: String,
+                              customActions: [UIAlertAction]? = nil,
+                              completion: (() -> Void)?) {
+        
+        let basicAlert = UIAlertController.init(title: title, message: content, preferredStyle: .alert)
+        
+        if let wrappedActions = customActions {
+            wrappedActions.forEach({
+                basicAlert.addAction($0)
+            })
+        } else {
+            basicAlert.addAction(UIAlertAction.init(title: "Accept", style: .default, handler: nil)
+            )
+        }
+        self.presentView(from: view, useCase: basicAlert, withTransition: .modal, completion: completion)
+    }
 }
