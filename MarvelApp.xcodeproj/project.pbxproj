@@ -69,6 +69,8 @@
 		AC95CA28260F4F1E000F0927 /* ImageSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95CA20260F4F1E000F0927 /* ImageSelectorView.xib */; };
 		AC95CA29260F4F1E000F0927 /* ImageSelectorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA21260F4F1E000F0927 /* ImageSelectorEntity.swift */; };
 		AC95CA2A260F4F1E000F0927 /* ImageSelectorWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA22260F4F1E000F0927 /* ImageSelectorWireframe.swift */; };
+		AC95CA3B260F53D0000F0927 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA3A260F53D0000F0927 /* UIImageViewExtension.swift */; };
+		AC95CA55261091C4000F0927 /* PhotoLibraryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA54261091C4000F0927 /* PhotoLibraryProvider.swift */; };
 		FCA9D76C4F7BD364387413E1 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD6FD2690DF3D54F97BE1D7 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +159,8 @@
 		AC95CA20260F4F1E000F0927 /* ImageSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSelectorView.xib; sourceTree = "<group>"; };
 		AC95CA21260F4F1E000F0927 /* ImageSelectorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorEntity.swift; sourceTree = "<group>"; };
 		AC95CA22260F4F1E000F0927 /* ImageSelectorWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorWireframe.swift; sourceTree = "<group>"; };
+		AC95CA3A260F53D0000F0927 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		AC95CA54261091C4000F0927 /* PhotoLibraryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryProvider.swift; sourceTree = "<group>"; };
 		C803A39A1F8AFE3F73A10C01 /* Pods-MarvelAppTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		DCE8E8DFD30540FE668E7D71 /* Pods-MarvelAppTests.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug (development).xcconfig"; sourceTree = "<group>"; };
 		F7E708EBD7FBB3A5149B9EC4 /* Pods_MarvelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +272,7 @@
 		AC3981412606732C00E4CC44 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				AC95CA532610918A000F0927 /* System */,
 				AC3981422606733900E4CC44 /* Network */,
 			);
 			path = Providers;
@@ -314,6 +319,7 @@
 			children = (
 				AC95C9B0260D274F000F0927 /* StringExtension.swift */,
 				AC3981942607614300E4CC44 /* UIViewControllerExtension.swift */,
+				AC95CA3A260F53D0000F0927 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,6 +438,14 @@
 				AC95CA20260F4F1E000F0927 /* ImageSelectorView.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		AC95CA532610918A000F0927 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				AC95CA54261091C4000F0927 /* PhotoLibraryProvider.swift */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 		FC62858CBB86ED23D03DAEBB /* Pods */ = {
@@ -665,6 +679,7 @@
 				AC3980BE260666F800E4CC44 /* SceneDelegate.swift in Sources */,
 				AC3981AE260763DF00E4CC44 /* CharacterListContract.swift in Sources */,
 				AC95CA26260F4F1E000F0927 /* ImageSelectorInteractor.swift in Sources */,
+				AC95CA55261091C4000F0927 /* PhotoLibraryProvider.swift in Sources */,
 				AC95C9A8260D0B8B000F0927 /* RegisterFormEntity.swift in Sources */,
 				AC3981B4260763DF00E4CC44 /* CharacterListEntity.swift in Sources */,
 				AC3981952607614300E4CC44 /* UIViewControllerExtension.swift in Sources */,
@@ -691,6 +706,7 @@
 				AC95CA2A260F4F1E000F0927 /* ImageSelectorWireframe.swift in Sources */,
 				AC95C9A6260D0B8B000F0927 /* RegisterFormView.swift in Sources */,
 				AC95C9A5260D0B8B000F0927 /* RegisterFormInteractor.swift in Sources */,
+				AC95CA3B260F53D0000F0927 /* UIImageViewExtension.swift in Sources */,
 				AC398206260A488800E4CC44 /* ItemCollectionInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
