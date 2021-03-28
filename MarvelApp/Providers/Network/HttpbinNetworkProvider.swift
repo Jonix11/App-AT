@@ -19,6 +19,10 @@ class HttpbinNetworkProvider: HttpbinProviderContract {
         case post
     }
     
+    enum HttpbinNetworkError: Error {
+        case errorSendingData
+    }
+    
     func createUser(with data: [String: String]) -> Promise<Void> {
         return Promise<Void> { promise in
             AF.request(self.getURL(method: .post),
@@ -26,9 +30,8 @@ class HttpbinNetworkProvider: HttpbinProviderContract {
                        parameters: data,
                        encoder: JSONParameterEncoder.default).response { response in
                         switch response.result {
-                        case .failure(let error):
-                            print(error)
-                            promise.reject(error)
+                        case .failure:
+                            promise.reject(HttpbinNetworkError.errorSendingData)
                         case .success:
                             promise.fulfill(())
                         }
