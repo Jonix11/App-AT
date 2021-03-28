@@ -29,7 +29,6 @@ class ImageSelectorPresenter: BasePresenter, ImageSelectorPresenterContract {
     func launchPhotoPickerView() {
         firstly {
             interactor.tryAccessToPhotoLibrary().done { [weak self] isEnabled in
-                print(isEnabled)
                 if isEnabled {
                     self?.view.showPickerView()
                 } else {
