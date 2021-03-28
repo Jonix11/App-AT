@@ -18,6 +18,9 @@ protocol ImageSelectorEntityContract: BaseEntity {
 protocol ImageSelectorViewContract: BaseViewController {
     var presenter: ImageSelectorPresenterContract! { get set }
     
+    func showPickerView()
+    func askForAccessToLibrary()
+    
 }
 
 protocol ImageSelectorPresenterContract: BasePresenter {
@@ -28,10 +31,13 @@ protocol ImageSelectorPresenterContract: BasePresenter {
 
     func viewDidLoad()
     func viewWillAppear()
+    func launchPhotoPickerView()
 }
 
 protocol ImageSelectorInteractorContract: BaseInteractor {
     var output: ImageSelectorInteractorOutputContract! {get set}
+    
+    func tryAccessToPhotoLibrary() -> Promise<Bool>
 }
 
 protocol ImageSelectorInteractorOutputContract: class {

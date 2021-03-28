@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class ImageSelectorPresenter: BasePresenter, ImageSelectorPresenterContract {
 
@@ -16,6 +17,7 @@ class ImageSelectorPresenter: BasePresenter, ImageSelectorPresenterContract {
     var entity: ImageSelectorEntityContract!
     var wireframe: ImageSelectorWireframeContract!
 
+    // MARK: - Public Methods
     func viewDidLoad() {
 
     }
@@ -23,8 +25,20 @@ class ImageSelectorPresenter: BasePresenter, ImageSelectorPresenterContract {
     func viewWillAppear() {
 
     }
+    
+    func launchPhotoPickerView() {
+        firstly {
+            interactor.tryAccessToPhotoLibrary().done { [weak self] isEnabled in
+                print(isEnabled)
+                if isEnabled {
+                    self?.view.showPickerView()
+                } else {
+                    self?.view.askForAccessToLibrary()
+                }
+            }
+        }
+    }
 }
-
 
 // MARK: - ImageSelectorInteractorOutputContract
 extension ImageSelectorPresenter: ImageSelectorInteractorOutputContract {

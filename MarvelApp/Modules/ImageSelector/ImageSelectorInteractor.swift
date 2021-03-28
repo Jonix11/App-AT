@@ -8,13 +8,36 @@
 //
 
 import Foundation
+import PromiseKit
 
 class ImageSelectorInteractor: BaseInteractor, ImageSelectorInteractorContract {
     weak var output: ImageSelectorInteractorOutputContract!
 
-    var networkProvider: MarvelProviderContract
+    var photoProvider: PhotoLibraryProviderContract
     
-    init (provider: MarvelProviderContract) {
-        self.networkProvider = provider
+    init (provider: PhotoLibraryProviderContract) {
+        self.photoProvider = provider
+    }
+    
+    func tryAccessToPhotoLibrary() -> Promise<Bool> {
+        return Promise<Bool> { promise in
+            firstly {
+                photoProvider.accessToLibraryEnable()
+            }.done { isEnabled in
+                if isEnabled {
+                    promise.fulfill(isEnabled)
+                } else {
+                    self.photoProvider.requestAuthorization().done { requested in
+                        promise.fulfill(requested)
+                    }.catch { error in
+                        #warning("TODO: Error pidiendo autorización")
+                        promise.reject(error)
+                    }
+                }
+            }.catch { error in
+                promise.reject(error)
+            }
+        }
+        
     }
 }
