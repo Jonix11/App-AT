@@ -70,6 +70,7 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
     // MARK: - Public Methods
     func updateCharacterListData(with character: [CellItemContract]) {
         self.datasource.itemList = character
+        self.delegate.loading = false
         collectionView.reloadData()
     }
 }
@@ -98,8 +99,18 @@ class ItemCollectionDatasource: NSObject, UICollectionViewDataSource {
 
 class ItemCollectionDelegate: NSObject, UICollectionViewDelegate {
     weak var presenter: ItemCollectionPresenterContract!
+    var loading = false
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.characterSelected(at: indexPath.item)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let isFinishingScrolling = scrollView.contentOffset.y >=
+            (scrollView.contentSize.height - scrollView.frame.size.height - 300)
+        if isFinishingScrolling && !loading {
+            presenter.getCharacterList()
+            loading = true
+        }
     }
 }

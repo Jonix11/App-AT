@@ -43,6 +43,7 @@
 		AC39820A260A488800E4CC44 /* ItemCollectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */; };
 		AC95C95A260A6B18000F0927 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */; };
 		AC95C95B260A6B18000F0927 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */; };
+		AC95C9B9260E4FDB000F0927 /* HttpbinNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */; };
 		AC95C973260A7666000F0927 /* ItemDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96B260A7666000F0927 /* ItemDetailContract.swift */; };
 		AC95C974260A7666000F0927 /* ItemDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96C260A7666000F0927 /* ItemDetailPresenter.swift */; };
 		AC95C975260A7666000F0927 /* ItemDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96D260A7666000F0927 /* ItemDetailBuilder.swift */; };
@@ -133,6 +134,7 @@
 		AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionWireframe.swift; sourceTree = "<group>"; };
 		AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpbinNetworkProvider.swift; sourceTree = "<group>"; };
 		AC95C96B260A7666000F0927 /* ItemDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContract.swift; sourceTree = "<group>"; };
 		AC95C96C260A7666000F0927 /* ItemDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailPresenter.swift; sourceTree = "<group>"; };
 		AC95C96D260A7666000F0927 /* ItemDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailBuilder.swift; sourceTree = "<group>"; };
