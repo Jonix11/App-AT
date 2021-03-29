@@ -32,6 +32,7 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
                 statusView.isHidden = true
             case .loading:
                 [statusView, loadingIndicator].forEach { $0?.isHidden = false }
+            // swiftlint:disable:next empty_enum_arguments
             case .failure(_):
                 break
             case .empty:

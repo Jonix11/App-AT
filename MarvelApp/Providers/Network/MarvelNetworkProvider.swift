@@ -38,7 +38,7 @@ class MarvelNetworkProvider: MarvelProviderContract {
             self.getInitialData(fromEndpoint: endpoint, offset: offset).done { data in
                 let itemList = self.getItemList(fromData: data, endpoint: endpoint)
                 promise.fulfill(itemList)
-            }.catch { error in
+            }.catch { _ in
                 promise.reject(MarvelNetworkError.getInitialDataError)
             }
         }

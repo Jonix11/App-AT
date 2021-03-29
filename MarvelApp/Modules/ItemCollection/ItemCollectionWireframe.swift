@@ -16,6 +16,11 @@ class ItemCollectionWireframe: BaseWireframe, ItemCollectionWireframeContract {
     
     func showDetailView(with character: ItemDetailContract) {
         let detailView = ItemDetailBuilder.build(character: character)
-        self.presentView(from: view, useCase: detailView, withTransition: .modal, modalPresentationStyle: .automatic, animated: true, completion: nil)
+        self.presentView(from: view,
+                         useCase: detailView,
+                         withTransition: .modal,
+                         modalPresentationStyle: .automatic,
+                         animated: true,
+                         completion: nil)
     }
 }

@@ -89,6 +89,7 @@ extension ImageSelectorView: PHPickerViewControllerDelegate {
         
         if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
             itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                // swiftlint:disable:next unused_optional_binding
                 if let _ = error {
                     DispatchQueue.main.async {
                         self?.presenter.wireframe.showCustomModalAlert(self,
