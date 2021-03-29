@@ -2,13 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SchemeUserState</key>
-	<dict>
-		<key>MarvelApp.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
-	</dict>
+	<key>API_KEY</key>
+	<string>06402bf94c966e537b07add701eea72e</string>
+	<key>HASH</key>
+	<string>20210617fd565416701b10a00a012bac</string>
+	<key>TS</key>
+	<string>jontxu</string>
 </dict>
 </plist>
