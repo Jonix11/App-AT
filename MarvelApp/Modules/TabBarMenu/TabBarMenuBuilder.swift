@@ -17,7 +17,7 @@ class TabBarMenuBuilder {
         return view
     }
     
-    static func setuupPresenter(view: TabBarMenuViewContract) {
+    static func setupPresenter(view: TabBarMenuViewContract) {
         let presenter = TabBarMenuPresenter()
         let entity = TabBarMenuEntity()
         let wireframe = TabBarMenuWireframe()

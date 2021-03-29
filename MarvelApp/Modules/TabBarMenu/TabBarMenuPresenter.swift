@@ -25,7 +25,6 @@ class TabBarMenuPresenter: BasePresenter, TabBarMenuPresenterContract {
     }
 }
 
-
 // MARK: - TabBarMenuInteractorOutputContract
 extension TabBarMenuPresenter: TabBarMenuInteractorOutputContract {
     
