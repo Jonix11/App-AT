@@ -36,7 +36,7 @@ struct NetworkConstants {
     }
 }
 
-// El Enum NetworkInfo lo uso para leer la apiKey, hash y timestamp del archivo ApiInfo.plist que no subo a git.
+// El Enum NetworkInfo lo uso para leer la apiKey, hash y timestamp del archivo InfoApi.plist que no subo a git.
 // Lo uso en la función de arriba para añadirlos en los queryparams. No sé si es el lugar apropiado para poner esto,
 // pero como no sabía donde ponerlo, lo he definido aquí.
 enum NetworkInfo {
@@ -53,7 +53,7 @@ enum NetworkInfo {
     
     // MARK: - Plist
     private static let infoDictionary: [String: Any] = {
-        guard let infoPlistPath = Bundle.main.path(forResource: "ApiInfo", ofType: "plist"),
+        guard let infoPlistPath = Bundle.main.path(forResource: "InfoApi", ofType: "plist"),
            let dict = NSDictionary(contentsOfFile: infoPlistPath) as? [String: Any] else {
             fatalError("Plist file not found")
         }
