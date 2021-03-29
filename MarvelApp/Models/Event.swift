@@ -1,23 +1,23 @@
 //
-//  Character.swift
+//  Event.swift
 //  MarvelApp
 //
-//  Created by Jon Gonzalez on 20/3/21.
+//  Created by Jon Gonzalez on 29/3/21.
 //
 
 import Foundation
 import ObjectMapper
 
-struct Character: ImmutableMappable {
+struct Event: ImmutableMappable {
     
-    let charaterId: Int
+    let eventId: Int
     let name: String
     let description: String
     let image: [String: String]
     let comics: [[String: String]]
     
     init(map: Map) throws {
-        charaterId = try map.value("id")
+        eventId = try map.value("id")
         name = try map.value("name")
         description = try map.value("description")
         image = try map.value("thumbnail")
@@ -25,18 +25,9 @@ struct Character: ImmutableMappable {
     }
 }
 
-enum ImageDictionary {
-    static let path = "path"
-    static let ext = "extension"
-}
-
-enum ComicsDictionary {
-    static let name = "name"
-}
-
-extension Character: CellItemContract {
+extension Event: CellItemContract {
     var itemId: Int {
-        return self.charaterId
+        return self.eventId
     }
 
     var itemName: String {
@@ -48,7 +39,7 @@ extension Character: CellItemContract {
         let ext = self.image[ImageDictionary.ext]
         if let strPath = path,
            let strExt = ext {
-            let strURL = strPath + "." + strExt
+            let strURL = strPath + strExt
             return URL(string: strURL)
         } else {
             return nil
@@ -56,7 +47,7 @@ extension Character: CellItemContract {
     }
 }
 
-extension Character: ItemDetailContract {
+extension Event: ItemDetailContract {
     var itemDescription: String {
         return description
     }
