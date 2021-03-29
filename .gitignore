@@ -3,7 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,swift,cocoapods
 
 # Personal files
-ApiInfo.plist
+InfoApi.plist
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
