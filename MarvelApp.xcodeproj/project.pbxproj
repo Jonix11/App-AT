@@ -34,6 +34,7 @@
 		AC398209260A488800E4CC44 /* ItemCollectionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC398201260A488800E4CC44 /* ItemCollectionEntity.swift */; };
 		AC39820A260A488800E4CC44 /* ItemCollectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */; };
 		AC6349562611EF4C00651013 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6349552611EF4C00651013 /* Event.swift */; };
+		AC6349CA261232C000651013 /* NetworkInfo_Rename.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC6349C9261232C000651013 /* NetworkInfo_Rename.plist */; };
 		AC95C95A260A6B18000F0927 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */; };
 		AC95C95B260A6B18000F0927 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */; };
 		AC95C973260A7666000F0927 /* ItemDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96B260A7666000F0927 /* ItemDetailContract.swift */; };
@@ -125,6 +126,7 @@
 		AC398201260A488800E4CC44 /* ItemCollectionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionEntity.swift; sourceTree = "<group>"; };
 		AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionWireframe.swift; sourceTree = "<group>"; };
 		AC6349552611EF4C00651013 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		AC6349C9261232C000651013 /* NetworkInfo_Rename.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NetworkInfo_Rename.plist; sourceTree = "<group>"; };
 		AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC95C96B260A7666000F0927 /* ItemDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContract.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */,
 				AC3981432606735D00E4CC44 /* MarvelNetworkProvider.swift */,
 				AC3981582606768500E4CC44 /* NetworkConstants.swift */,
+				AC6349C9261232C000651013 /* NetworkInfo_Rename.plist */,
 				AC398176260683A800E4CC44 /* NetworkInfo.plist */,
 			);
 			path = Network;
@@ -573,6 +576,7 @@
 				AC95C978260A7666000F0927 /* ItemDetailView.xib in Resources */,
 				AC95C95B260A6B18000F0927 /* ItemCollectionViewCell.xib in Resources */,
 				AC398208260A488800E4CC44 /* ItemCollectionView.xib in Resources */,
+				AC6349CA261232C000651013 /* NetworkInfo_Rename.plist in Resources */,
 				AC3980C5260666F900E4CC44 /* Assets.xcassets in Resources */,
 				AC95CB252611C30E000F0927 /* TabBarMenuView.xib in Resources */,
 			);
