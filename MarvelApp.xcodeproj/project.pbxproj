@@ -43,7 +43,6 @@
 		AC39820A260A488800E4CC44 /* ItemCollectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */; };
 		AC95C95A260A6B18000F0927 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */; };
 		AC95C95B260A6B18000F0927 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */; };
-		AC95C9B9260E4FDB000F0927 /* HttpbinNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */; };
 		AC95C973260A7666000F0927 /* ItemDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96B260A7666000F0927 /* ItemDetailContract.swift */; };
 		AC95C974260A7666000F0927 /* ItemDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96C260A7666000F0927 /* ItemDetailPresenter.swift */; };
 		AC95C975260A7666000F0927 /* ItemDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C96D260A7666000F0927 /* ItemDetailBuilder.swift */; };
@@ -72,6 +71,14 @@
 		AC95CA2A260F4F1E000F0927 /* ImageSelectorWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA22260F4F1E000F0927 /* ImageSelectorWireframe.swift */; };
 		AC95CA3B260F53D0000F0927 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA3A260F53D0000F0927 /* UIImageViewExtension.swift */; };
 		AC95CA55261091C4000F0927 /* PhotoLibraryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CA54261091C4000F0927 /* PhotoLibraryProvider.swift */; };
+		AC95CB202611C30E000F0927 /* TabBarMenuContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB182611C30E000F0927 /* TabBarMenuContract.swift */; };
+		AC95CB212611C30E000F0927 /* TabBarMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB192611C30E000F0927 /* TabBarMenuPresenter.swift */; };
+		AC95CB222611C30E000F0927 /* TabBarMenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB1A2611C30E000F0927 /* TabBarMenuBuilder.swift */; };
+		AC95CB232611C30E000F0927 /* TabBarMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB1B2611C30E000F0927 /* TabBarMenuInteractor.swift */; };
+		AC95CB242611C30E000F0927 /* TabBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB1C2611C30E000F0927 /* TabBarMenuView.swift */; };
+		AC95CB252611C30E000F0927 /* TabBarMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95CB1D2611C30E000F0927 /* TabBarMenuView.xib */; };
+		AC95CB262611C30E000F0927 /* TabBarMenuEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB1E2611C30E000F0927 /* TabBarMenuEntity.swift */; };
+		AC95CB272611C30E000F0927 /* TabBarMenuWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB1F2611C30E000F0927 /* TabBarMenuWireframe.swift */; };
 		FCA9D76C4F7BD364387413E1 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD6FD2690DF3D54F97BE1D7 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,7 +141,6 @@
 		AC398202260A488800E4CC44 /* ItemCollectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionWireframe.swift; sourceTree = "<group>"; };
 		AC95C958260A6B18000F0927 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC95C959260A6B18000F0927 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
-		AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpbinNetworkProvider.swift; sourceTree = "<group>"; };
 		AC95C96B260A7666000F0927 /* ItemDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailContract.swift; sourceTree = "<group>"; };
 		AC95C96C260A7666000F0927 /* ItemDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailPresenter.swift; sourceTree = "<group>"; };
 		AC95C96D260A7666000F0927 /* ItemDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailBuilder.swift; sourceTree = "<group>"; };
@@ -163,6 +169,14 @@
 		AC95CA22260F4F1E000F0927 /* ImageSelectorWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorWireframe.swift; sourceTree = "<group>"; };
 		AC95CA3A260F53D0000F0927 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		AC95CA54261091C4000F0927 /* PhotoLibraryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryProvider.swift; sourceTree = "<group>"; };
+		AC95CB182611C30E000F0927 /* TabBarMenuContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuContract.swift; sourceTree = "<group>"; };
+		AC95CB192611C30E000F0927 /* TabBarMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuPresenter.swift; sourceTree = "<group>"; };
+		AC95CB1A2611C30E000F0927 /* TabBarMenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuBuilder.swift; sourceTree = "<group>"; };
+		AC95CB1B2611C30E000F0927 /* TabBarMenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuInteractor.swift; sourceTree = "<group>"; };
+		AC95CB1C2611C30E000F0927 /* TabBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuView.swift; sourceTree = "<group>"; };
+		AC95CB1D2611C30E000F0927 /* TabBarMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarMenuView.xib; sourceTree = "<group>"; };
+		AC95CB1E2611C30E000F0927 /* TabBarMenuEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuEntity.swift; sourceTree = "<group>"; };
+		AC95CB1F2611C30E000F0927 /* TabBarMenuWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuWireframe.swift; sourceTree = "<group>"; };
 		C803A39A1F8AFE3F73A10C01 /* Pods-MarvelAppTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		DCE8E8DFD30540FE668E7D71 /* Pods-MarvelAppTests.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug (development).xcconfig"; sourceTree = "<group>"; };
 		F7E708EBD7FBB3A5149B9EC4 /* Pods_MarvelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +314,7 @@
 				AC3981FA260A485800E4CC44 /* ItemCollection */,
 				AC95C96A260A764B000F0927 /* ItemDetail */,
 				AC95C999260D0B6B000F0927 /* RegisterForm */,
+				AC95CB172611C2C2000F0927 /* TabBarMenu */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -450,6 +465,29 @@
 			path = System;
 			sourceTree = "<group>";
 		};
+		AC95CB172611C2C2000F0927 /* TabBarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AC95CB1A2611C30E000F0927 /* TabBarMenuBuilder.swift */,
+				AC95CB182611C30E000F0927 /* TabBarMenuContract.swift */,
+				AC95CB1E2611C30E000F0927 /* TabBarMenuEntity.swift */,
+				AC95CB1B2611C30E000F0927 /* TabBarMenuInteractor.swift */,
+				AC95CB192611C30E000F0927 /* TabBarMenuPresenter.swift */,
+				AC95CB1C2611C30E000F0927 /* TabBarMenuView.swift */,
+				AC95CB1F2611C30E000F0927 /* TabBarMenuWireframe.swift */,
+				AC95CB2E2611C388000F0927 /* UI */,
+			);
+			path = TabBarMenu;
+			sourceTree = "<group>";
+		};
+		AC95CB2E2611C388000F0927 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AC95CB1D2611C30E000F0927 /* TabBarMenuView.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		FC62858CBB86ED23D03DAEBB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +596,7 @@
 				AC3981B3260763DF00E4CC44 /* CharacterListView.xib in Resources */,
 				AC398208260A488800E4CC44 /* ItemCollectionView.xib in Resources */,
 				AC3980C5260666F900E4CC44 /* Assets.xcassets in Resources */,
+				AC95CB252611C30E000F0927 /* TabBarMenuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +697,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC3981AF260763DF00E4CC44 /* CharacterListPresenter.swift in Sources */,
+				AC95CB262611C30E000F0927 /* TabBarMenuEntity.swift in Sources */,
 				AC398204260A488800E4CC44 /* ItemCollectionPresenter.swift in Sources */,
+				AC95CB232611C30E000F0927 /* TabBarMenuInteractor.swift in Sources */,
+				AC95CB222611C30E000F0927 /* TabBarMenuBuilder.swift in Sources */,
 				AC3981B5260763DF00E4CC44 /* CharacterListWireframe.swift in Sources */,
 				AC95C977260A7666000F0927 /* ItemDetailView.swift in Sources */,
 				AC95C9A3260D0B8B000F0927 /* RegisterFormPresenter.swift in Sources */,
@@ -680,6 +722,8 @@
 				AC398209260A488800E4CC44 /* ItemCollectionEntity.swift in Sources */,
 				AC3980BE260666F800E4CC44 /* SceneDelegate.swift in Sources */,
 				AC3981AE260763DF00E4CC44 /* CharacterListContract.swift in Sources */,
+				AC95CB242611C30E000F0927 /* TabBarMenuView.swift in Sources */,
+				AC95CB272611C30E000F0927 /* TabBarMenuWireframe.swift in Sources */,
 				AC95CA26260F4F1E000F0927 /* ImageSelectorInteractor.swift in Sources */,
 				AC95CA55261091C4000F0927 /* PhotoLibraryProvider.swift in Sources */,
 				AC95C9A8260D0B8B000F0927 /* RegisterFormEntity.swift in Sources */,
@@ -687,6 +731,7 @@
 				AC3981952607614300E4CC44 /* UIViewControllerExtension.swift in Sources */,
 				AC39818D2607611700E4CC44 /* BaseViewController.swift in Sources */,
 				AC95C976260A7666000F0927 /* ItemDetailInteractor.swift in Sources */,
+				AC95CB202611C30E000F0927 /* TabBarMenuContract.swift in Sources */,
 				AC95C974260A7666000F0927 /* ItemDetailPresenter.swift in Sources */,
 				AC95C973260A7666000F0927 /* ItemDetailContract.swift in Sources */,
 				AC95C9A9260D0B8B000F0927 /* RegisterFormWireframe.swift in Sources */,
@@ -699,6 +744,7 @@
 				AC39820A260A488800E4CC44 /* ItemCollectionWireframe.swift in Sources */,
 				AC398207260A488800E4CC44 /* ItemCollectionView.swift in Sources */,
 				AC95CA27260F4F1E000F0927 /* ImageSelectorView.swift in Sources */,
+				AC95CB212611C30E000F0927 /* TabBarMenuPresenter.swift in Sources */,
 				AC398139260671DB00E4CC44 /* Character.swift in Sources */,
 				AC398203260A488800E4CC44 /* ItemCollectionContract.swift in Sources */,
 				AC95CA29260F4F1E000F0927 /* ImageSelectorEntity.swift in Sources */,
