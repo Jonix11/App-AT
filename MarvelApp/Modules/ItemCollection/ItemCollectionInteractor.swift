@@ -15,7 +15,6 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
 
     var networkProvider: MarvelNetworkProvider
     var itemList = [ItemDetailContract]()
-    var characterList4Cell = [CellItemContract]()
     
     init (provider: MarvelNetworkProvider) {
         self.networkProvider = provider
@@ -31,10 +30,7 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
                 itemList.forEach {
                     self.itemList.append($0)
                 }
-                for item in itemList {
-                    self.characterList4Cell.append(item)
-                }
-                promise.fulfill(self.characterList4Cell)
+                promise.fulfill(self.itemList)
             }.catch { error in
                 promise.reject(error)
             }
@@ -47,6 +43,5 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
     
     func resetItemList() {
         itemList = []
-        characterList4Cell = []
     }
 }
