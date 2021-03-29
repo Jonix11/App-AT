@@ -243,15 +243,13 @@
 		AC3980BA260666F800E4CC44 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
-				AC3980BB260666F800E4CC44 /* AppDelegate.swift */,
-				AC3980C4260666F900E4CC44 /* Assets.xcassets */,
+				AC6349502611EDA700651013 /* App Files */,
 				AC39810226066C0400E4CC44 /* Configuration */,
 				AC3981932607613100E4CC44 /* Extensions */,
-				AC3980C6260666F900E4CC44 /* LaunchScreen.storyboard */,
 				AC3981302606716E00E4CC44 /* Models */,
 				AC398185260760FC00E4CC44 /* Modules */,
 				AC3981412606732C00E4CC44 /* Providers */,
-				AC3980BD260666F800E4CC44 /* SceneDelegate.swift */,
+				AC63494F2611ED8900651013 /* Resources */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -386,6 +384,24 @@
 				AC398200260A488800E4CC44 /* ItemCollectionView.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		AC63494F2611ED8900651013 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC3980C4260666F900E4CC44 /* Assets.xcassets */,
+				AC3980C6260666F900E4CC44 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC6349502611EDA700651013 /* App Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC3980BB260666F800E4CC44 /* AppDelegate.swift */,
+				AC3980BD260666F800E4CC44 /* SceneDelegate.swift */,
+			);
+			path = "App Files";
 			sourceTree = "<group>";
 		};
 		AC95C96A260A764B000F0927 /* ItemDetail */ = {
