@@ -18,11 +18,27 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var comicsTableView: UITableView!
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     var datasource: ComicsTableViewDatasource!
     // swiftlint:disable:next weak_delegate
     var delegate: ComicsTableViewDelegate!
+    var state: ViewState = .success {
+        didSet {
+            switch state {
+            case .success:
+                statusView.isHidden = true
+            case .loading:
+                [statusView, loadingIndicator].forEach { $0?.isHidden = false }
+            case .failure(_):
+                break
+            case .empty:
+                break
+            }
+        }
+    }
     
 	var presenter: ItemDetailPresenterContract!
 
@@ -31,6 +47,7 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
         super.viewDidLoad()
         self.setupView()
         self.presenter.viewDidLoad()
+        state = .loading
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +88,7 @@ class ItemDetailView: BaseViewController, ItemDetailViewContract {
         comicsTableView.snp.makeConstraints { make -> Void in
             make.height.equalTo(height)
         }
+        state = .success
         
     }
 }

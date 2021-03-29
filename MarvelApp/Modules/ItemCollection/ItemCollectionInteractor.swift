@@ -35,7 +35,6 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
                 }
                 promise.fulfill(self.characterList4Cell)
             }.catch { error in
-                #warning("TODO: Improve")
                 promise.reject(error)
             }
         }

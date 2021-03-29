@@ -19,6 +19,8 @@ protocol ItemCollectionViewContract: BaseViewController {
     var presenter: ItemCollectionPresenterContract! { get set }
     
     func updateCharacterListData(with character: [CellItemContract])
+    func setEmptyView()
+    func setErrorView(with error: String)
     
 }
 

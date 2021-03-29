@@ -11,6 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemCollectionView" customModule="MarvelApp" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="Pdh-My-o65" id="h4o-Ec-08k"/>
+                <outlet property="loadingIndicator" destination="Zk5-y3-dqN" id="osD-6F-9nD"/>
+                <outlet property="retryButton" destination="3Mh-ga-Mvi" id="DdN-Oz-mep"/>
+                <outlet property="statusImage" destination="8TS-ud-FRe" id="5ch-wD-nVB"/>
+                <outlet property="statusLabel" destination="W9V-jM-4Qj" id="eM5-iX-Dwt"/>
+                <outlet property="statusView" destination="hPs-yq-5jN" id="CAB-EW-DqW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,21 +34,72 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPs-yq-5jN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zk5-y3-dqN">
+                            <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                            <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-ud-FRe">
+                            <rect key="frame" x="187" y="389.5" width="40" height="39"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="5kw-6d-ZfS"/>
+                                <constraint firstAttribute="height" constant="40" id="LHK-ow-PPw"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9V-jM-4Qj">
+                            <rect key="frame" x="20" y="434" width="374" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mh-ga-Mvi">
+                            <rect key="frame" x="184.5" y="483" width="45" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="Retry"/>
+                            <connections>
+                                <action selector="retryButtonTapped:" destination="-1" eventType="touchUpInside" id="E1p-Ye-0U5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="W9V-jM-4Qj" firstAttribute="leading" secondItem="hPs-yq-5jN" secondAttribute="leading" constant="20" id="82H-KI-d39"/>
+                        <constraint firstItem="3Mh-ga-Mvi" firstAttribute="centerX" secondItem="hPs-yq-5jN" secondAttribute="centerX" id="832-ya-PaD"/>
+                        <constraint firstAttribute="trailing" secondItem="W9V-jM-4Qj" secondAttribute="trailing" constant="20" id="BsX-Ek-E7r"/>
+                        <constraint firstItem="W9V-jM-4Qj" firstAttribute="top" secondItem="8TS-ud-FRe" secondAttribute="bottom" constant="5" id="GEu-rz-kXi"/>
+                        <constraint firstItem="Zk5-y3-dqN" firstAttribute="centerX" secondItem="hPs-yq-5jN" secondAttribute="centerX" id="Kat-y7-sXF"/>
+                        <constraint firstItem="8TS-ud-FRe" firstAttribute="centerY" secondItem="hPs-yq-5jN" secondAttribute="centerY" id="UHT-ep-JBe"/>
+                        <constraint firstItem="8TS-ud-FRe" firstAttribute="centerX" secondItem="hPs-yq-5jN" secondAttribute="centerX" id="plo-mo-VsO"/>
+                        <constraint firstItem="Zk5-y3-dqN" firstAttribute="centerY" secondItem="hPs-yq-5jN" secondAttribute="centerY" id="q6v-aW-mgF"/>
+                        <constraint firstItem="3Mh-ga-Mvi" firstAttribute="top" secondItem="W9V-jM-4Qj" secondAttribute="bottom" constant="25" id="zMN-Oq-w2D"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="tAt-aP-EcC"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="tAt-aP-EcC" firstAttribute="trailing" secondItem="Pdh-My-o65" secondAttribute="trailing" constant="10" id="5E8-Eg-fOz"/>
+                <constraint firstItem="hPs-yq-5jN" firstAttribute="leading" secondItem="tAt-aP-EcC" secondAttribute="leading" id="Evr-vB-HSM"/>
                 <constraint firstItem="tAt-aP-EcC" firstAttribute="bottom" secondItem="Pdh-My-o65" secondAttribute="bottom" id="KW0-EC-POv"/>
+                <constraint firstItem="hPs-yq-5jN" firstAttribute="top" secondItem="tAt-aP-EcC" secondAttribute="top" id="Ris-tE-dbY"/>
+                <constraint firstItem="tAt-aP-EcC" firstAttribute="trailing" secondItem="hPs-yq-5jN" secondAttribute="trailing" id="bIA-yu-I65"/>
                 <constraint firstItem="Pdh-My-o65" firstAttribute="leading" secondItem="tAt-aP-EcC" secondAttribute="leading" constant="10" id="qJR-vd-g2P"/>
+                <constraint firstItem="tAt-aP-EcC" firstAttribute="bottom" secondItem="hPs-yq-5jN" secondAttribute="bottom" id="uDv-8K-Uvn"/>
                 <constraint firstItem="Pdh-My-o65" firstAttribute="top" secondItem="tAt-aP-EcC" secondAttribute="top" id="v6y-TH-QSw"/>
             </constraints>
             <point key="canvasLocation" x="132" y="95"/>
         </view>
     </objects>
     <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

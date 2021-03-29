@@ -30,9 +30,13 @@ class ItemCollectionPresenter: BasePresenter, ItemCollectionPresenterContract {
         firstly {
             self.interactor.getCharacterList()
         }.done { [weak self] characterList in
-            self?.view.updateCharacterListData(with: characterList)
+            if characterList.isEmpty {
+                self?.view.setEmptyView()
+            } else {
+                self?.view.updateCharacterListData(with: characterList)
+            }
         }.catch { [weak self] error in
-            
+            self?.view.setErrorView(with: error.localizedDescription)
         }
     }
     

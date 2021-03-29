@@ -13,7 +13,9 @@
                 <outlet property="comicsTableView" destination="BbA-wk-aMU" id="QFK-1y-4c5"/>
                 <outlet property="descriptionTextView" destination="9co-eF-27T" id="MnA-G1-EbI"/>
                 <outlet property="itemImage" destination="9Fb-uj-tKe" id="0EH-j1-1hv"/>
+                <outlet property="loadingIndicator" destination="0ya-R0-E5M" id="qNp-Kl-344"/>
                 <outlet property="nameLabel" destination="g9K-MI-WHC" id="KZQ-LT-n6u"/>
+                <outlet property="statusView" destination="9HR-BO-d2l" id="D6I-WS-2Wi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -63,15 +65,28 @@
                                     <rect key="frame" x="10" y="555.5" width="394" height="308.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HR-BO-d2l">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="894"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0ya-R0-E5M">
+                                            <rect key="frame" x="189" y="429" width="37" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="9Fb-uj-tKe" secondAttribute="trailing" constant="87" id="1Fu-fi-xa0"/>
                                 <constraint firstItem="9co-eF-27T" firstAttribute="leading" secondItem="jCI-ay-S2T" secondAttribute="leading" constant="10" id="2u7-6d-6EQ"/>
+                                <constraint firstItem="9HR-BO-d2l" firstAttribute="top" secondItem="jCI-ay-S2T" secondAttribute="top" id="6nr-yf-GnJ"/>
                                 <constraint firstItem="9Fb-uj-tKe" firstAttribute="leading" secondItem="jCI-ay-S2T" secondAttribute="leading" constant="87" id="8Db-Zf-9vu"/>
                                 <constraint firstAttribute="trailing" secondItem="g9K-MI-WHC" secondAttribute="trailing" constant="32" id="AhL-wC-eQj"/>
                                 <constraint firstItem="CyH-Pt-Lkt" firstAttribute="leading" secondItem="jCI-ay-S2T" secondAttribute="leading" constant="20" id="BMm-4W-pKS"/>
                                 <constraint firstItem="BbA-wk-aMU" firstAttribute="leading" secondItem="jCI-ay-S2T" secondAttribute="leading" constant="10" id="CHX-fh-5JY"/>
+                                <constraint firstAttribute="bottom" secondItem="9HR-BO-d2l" secondAttribute="bottom" id="CyF-aS-Ed8"/>
                                 <constraint firstItem="WC9-QO-Oae" firstAttribute="top" secondItem="g9K-MI-WHC" secondAttribute="bottom" constant="20" id="D6Q-zl-JFw"/>
                                 <constraint firstItem="9Fb-uj-tKe" firstAttribute="top" secondItem="jCI-ay-S2T" secondAttribute="top" constant="30" id="Emh-yo-C7Y"/>
                                 <constraint firstItem="BbA-wk-aMU" firstAttribute="top" secondItem="CyH-Pt-Lkt" secondAttribute="bottom" constant="5" id="I8i-JT-BoS"/>
@@ -83,6 +98,8 @@
                                 <constraint firstAttribute="trailing" secondItem="BbA-wk-aMU" secondAttribute="trailing" constant="10" id="eaw-sj-GgS"/>
                                 <constraint firstItem="CyH-Pt-Lkt" firstAttribute="top" secondItem="9co-eF-27T" secondAttribute="bottom" constant="20" id="k70-zo-T9F"/>
                                 <constraint firstAttribute="trailing" secondItem="9co-eF-27T" secondAttribute="trailing" constant="10" id="qHY-HG-ymU"/>
+                                <constraint firstItem="9HR-BO-d2l" firstAttribute="leading" secondItem="jCI-ay-S2T" secondAttribute="leading" id="uK8-DF-wlM"/>
+                                <constraint firstAttribute="trailing" secondItem="9HR-BO-d2l" secondAttribute="trailing" id="zRM-XL-63x"/>
                             </constraints>
                         </view>
                     </subviews>

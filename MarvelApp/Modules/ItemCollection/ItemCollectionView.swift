@@ -20,11 +20,44 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
+    
+    @IBAction func retryButtonTapped(_ sender: Any) {
+        presenter.getCharacterList()
+    }
     
     // MARK: - Properties
     var datasource: ItemCollectionDatasource!
     // swiftlint:disable:next weak_delegate
     var delegate: ItemCollectionDelegate!
+    var state: ViewState = .success {
+        didSet {
+
+            switch state {
+            case .loading:
+                [statusView, loadingIndicator].forEach { $0?.isHidden = false }
+                [statusLabel, statusImage, retryButton].forEach { $0?.isHidden = true }
+            case .failure(let errorMsg):
+                [statusView, statusLabel, statusImage, retryButton].forEach { $0?.isHidden = false }
+                loadingIndicator.isHidden = true
+                statusLabel.text = errorMsg
+                statusImage.image = UIImage(systemName: "xmark.circle.fill")
+                statusImage.tintColor = UIColor.systemRed
+            case .empty:
+                [statusView, statusLabel, statusImage, retryButton].forEach { $0?.isHidden = false }
+                loadingIndicator.isHidden = true
+                statusLabel.text = "There aren't items to show"
+                statusImage.image = UIImage(systemName: "info.circle.fill")
+                statusImage.tintColor = UIColor.systemBlue
+            case .success:
+                statusView.isHidden = true
+            }
+        }
+    }
 
 	var presenter: ItemCollectionPresenterContract!
     // private let collectionViewLayout = UICollectionViewFlowLayout()
@@ -34,6 +67,7 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
         super.viewDidLoad()
         self.setupView()
         self.presenter.viewDidLoad()
+        state = .loading
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +106,15 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
         self.datasource.itemList = character
         self.delegate.loading = false
         collectionView.reloadData()
+        state = .success
+    }
+    
+    func setEmptyView() {
+        state = .empty
+    }
+    
+    func setErrorView(with error: String) {
+        state = .failure(error)
     }
 }
 
