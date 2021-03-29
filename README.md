@@ -8,7 +8,7 @@ It uses VIPER architectural pattern and Alamofire, SDWebImage, PromiseKit, Objec
 
 ## Installation
 
-First of all, you have to **rename NetworkInfo_Rename.plist file to NetworkInfo.plist inside Provider/Network folder** and then introduce your own api key, hash and timestamp to be able to connect to Marvel API.
+First of all, you have to **rename ApiInfo_Rename.plist file to ApiInfo.plist inside Provider/Network folder** and then introduce your own api key, hash and timestamp to be able to connect to Marvel API.
 
 This app use **CocoaPods**, to run it, you must to execute the following command from the terminal to install CocoaPods dependencies:
 
