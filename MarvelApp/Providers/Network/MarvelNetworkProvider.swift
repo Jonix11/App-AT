@@ -19,8 +19,17 @@ class MarvelNetworkProvider: MarvelProviderContract {
         case characters
     }
     
-    enum MarvelNetworkError: Error {
+    /// Marver Network errors
+    enum MarvelNetworkError: Error, LocalizedError {
         case getInitialDataError
+        
+        /// Localized description
+        var localizedDescription: String {
+            switch self {
+            case .getInitialDataError:
+                return "Error. Can't get data"
+            }
+        }
     }
     
     func getCharacters(withOffset offset: String) -> Promise<[Character]> {
@@ -28,7 +37,7 @@ class MarvelNetworkProvider: MarvelProviderContract {
             self.getInitialData(fromEndpoint: .characters, offset: offset).done { data in
                 let characterList = self.getCharacterList(fromData: data)
                 promise.fulfill(characterList)
-            }.catch { error in
+            }.catch { _ in
                 promise.reject(MarvelNetworkError.getInitialDataError)
             }
         }

@@ -18,9 +18,17 @@ class HttpbinNetworkProvider: HttpbinProviderContract {
     enum HttpBinMethods {
         case post
     }
-    
-    enum HttpbinNetworkError: Error {
+    /// HttpBin Network errors
+    enum HttpbinNetworkError: Error, LocalizedError {
         case errorSendingData
+        
+        /// Localized description
+        var localizedDescription: String {
+            switch self {
+            case .errorSendingData:
+                return "Error sending your data."
+            }
+        }
     }
     
     func createUser(with data: [String: String]) -> Promise<Void> {
