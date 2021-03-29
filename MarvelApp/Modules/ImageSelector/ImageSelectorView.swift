@@ -14,9 +14,27 @@ class ImageSelectorView: BaseViewController, ImageSelectorViewContract {
     
     // MARK: - Outlets
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBAction func selectImageButtonTapped(_ sender: Any) {
         presenter.launchPhotoPickerView()
+    }
+    
+    var state: ViewState = .success {
+        didSet {
+            switch state {
+            case .empty:
+                break
+            case .loading:
+                [statusView, loadingIndicator].forEach { $0?.isHidden = false }
+            // swiftlint:disable:next empty_enum_arguments
+            case .failure(_):
+                break
+            case .success:
+                statusView.isHidden = true
+            }
+        }
     }
     
     var presenter: ImageSelectorPresenterContract!
@@ -26,11 +44,13 @@ class ImageSelectorView: BaseViewController, ImageSelectorViewContract {
         super.viewDidLoad()
         self.setupView()
         self.presenter.viewDidLoad()
+        state = .loading
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.presenter.viewWillAppear()
+        state = .success
     }
     
     func showPickerView() {
@@ -39,6 +59,7 @@ class ImageSelectorView: BaseViewController, ImageSelectorViewContract {
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         present(picker, animated: true)
+        state = .loading
     }
     
     func askForAccessToLibrary() {
@@ -79,6 +100,7 @@ extension ImageSelectorView: PHPickerViewControllerDelegate {
                     if let image = image as? UIImage {
                         DispatchQueue.main.async {
                             self?.photoImageView.image = image
+                            self?.state = .success
                         }
                     }
                 }

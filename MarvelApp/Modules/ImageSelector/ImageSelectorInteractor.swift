@@ -30,7 +30,6 @@ class ImageSelectorInteractor: BaseInteractor, ImageSelectorInteractorContract {
                     self.photoProvider.requestAuthorization().done { requested in
                         promise.fulfill(requested)
                     }.catch { error in
-                        #warning("TODO: Error pidiendo autorización")
                         promise.reject(error)
                     }
                 }

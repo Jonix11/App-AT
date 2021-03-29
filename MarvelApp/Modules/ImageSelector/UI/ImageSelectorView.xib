@@ -4,12 +4,15 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageSelectorView" customModule="MarvelApp" customModuleProvider="target">
             <connections>
+                <outlet property="loadingIndicator" destination="f13-aR-Duo" id="zRQ-AU-uUQ"/>
                 <outlet property="photoImageView" destination="tdm-bb-UP7" id="6D4-fW-lQW"/>
+                <outlet property="statusView" destination="2b2-mb-1ZK" id="GaW-0S-KkD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,19 +42,42 @@
                         <action selector="selectImageButtonTapped:" destination="-1" eventType="touchUpInside" id="GIM-SL-ZwQ"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2b2-mb-1ZK">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="f13-aR-Duo">
+                            <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                            <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="f13-aR-Duo" firstAttribute="centerX" secondItem="2b2-mb-1ZK" secondAttribute="centerX" id="eP9-nA-BeX"/>
+                        <constraint firstItem="f13-aR-Duo" firstAttribute="centerY" secondItem="2b2-mb-1ZK" secondAttribute="centerY" id="yj0-tN-2dp"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="tAt-aP-EcC"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="2b2-mb-1ZK" firstAttribute="top" secondItem="tAt-aP-EcC" secondAttribute="top" id="0IO-qh-wdc"/>
                 <constraint firstItem="PCc-y7-dHi" firstAttribute="leading" secondItem="tAt-aP-EcC" secondAttribute="leading" constant="20" id="DbY-OG-pJa"/>
+                <constraint firstItem="tAt-aP-EcC" firstAttribute="trailing" secondItem="2b2-mb-1ZK" secondAttribute="trailing" id="Rc1-AM-AVD"/>
                 <constraint firstItem="tdm-bb-UP7" firstAttribute="top" secondItem="PCc-y7-dHi" secondAttribute="bottom" constant="50" id="WQj-JF-Rmb"/>
                 <constraint firstItem="ShB-tx-sbd" firstAttribute="top" secondItem="tdm-bb-UP7" secondAttribute="bottom" constant="80" id="Wwz-Wd-N7P"/>
                 <constraint firstItem="tAt-aP-EcC" firstAttribute="trailing" secondItem="PCc-y7-dHi" secondAttribute="trailing" constant="20" id="ceG-is-QZt"/>
+                <constraint firstItem="2b2-mb-1ZK" firstAttribute="leading" secondItem="tAt-aP-EcC" secondAttribute="leading" id="dd1-pu-fY0"/>
                 <constraint firstItem="PCc-y7-dHi" firstAttribute="top" secondItem="tAt-aP-EcC" secondAttribute="top" constant="50" id="lUJ-mi-WYT"/>
                 <constraint firstItem="ShB-tx-sbd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mZU-uD-SIt"/>
+                <constraint firstItem="tAt-aP-EcC" firstAttribute="bottom" secondItem="2b2-mb-1ZK" secondAttribute="bottom" id="qcB-vs-Bgo"/>
                 <constraint firstItem="tdm-bb-UP7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="seD-1h-RTJ"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="125"/>
+            <point key="canvasLocation" x="131.8840579710145" y="124.55357142857142"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

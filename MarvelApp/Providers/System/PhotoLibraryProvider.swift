@@ -14,6 +14,19 @@ protocol PhotoLibraryProviderContract {
     func requestAuthorization() -> Promise<Bool>
 }
 
+/// Photo library provider errors
+enum PhotoLibraryError: Error, LocalizedError {
+    case errorAccessingPhotosLibrary
+    
+    /// Localized description
+    var localizedDescription: String {
+        switch self {
+        case .errorAccessingPhotosLibrary:
+            return "Error accessing to photo library"
+        }
+    }
+}
+
 class PhotoLibraryProvider: PhotoLibraryProviderContract {
     
     func accessToLibraryEnable() -> Promise<Bool> {
@@ -38,6 +51,4 @@ class PhotoLibraryProvider: PhotoLibraryProviderContract {
             }
         }
     }
-    
-    
 }

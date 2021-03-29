@@ -35,8 +35,11 @@ class ImageSelectorPresenter: BasePresenter, ImageSelectorPresenterContract {
             } else {
                 self?.view.askForAccessToLibrary()
             }
-        }.catch { error in
-            #warning("TODO: error accediendo a las fotos")
+        }.catch { _ in
+            self.wireframe.showCustomModalAlert(self.view,
+                                                title: "Error",
+                                                content: PhotoLibraryError.errorAccessingPhotosLibrary.localizedDescription,
+                                                completion: nil)
         }
     }
 }
