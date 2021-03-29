@@ -13,12 +13,16 @@ class TabBarMenuBuilder {
 
     static func build() -> TabBarMenuView {
         let view = TabBarMenuView.init(nibName: String(describing: TabBarMenuView.self), bundle: nil)
+        
+        return view
+    }
+    
+    static func setuupPresenter(view: TabBarMenuViewContract) {
         let presenter = TabBarMenuPresenter()
         let entity = TabBarMenuEntity()
         let wireframe = TabBarMenuWireframe()
         
-        let provider = MyProvider()
-        let interactor = TabBarMenuInteractor(provider: provider)
+        let interactor = TabBarMenuInteractor()
         
         view.presenter = presenter
         view.presenter.view = view
@@ -29,7 +33,5 @@ class TabBarMenuBuilder {
         
         view.presenter.wireframe.output = presenter
         view.presenter.wireframe.view = view
-        
-        return view
     }
 }

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarMenuView" customModule="MarvelApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tabBarController id="FFq-j5-5wm">
+        <tabBarController id="FFq-j5-5wm" customClass="TabBarMenuView" customModule="MarvelApp" customModuleProvider="target">
             <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h1L-nm-yYT">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>

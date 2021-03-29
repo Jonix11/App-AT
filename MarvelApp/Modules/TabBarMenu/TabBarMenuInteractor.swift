@@ -12,9 +12,4 @@ import Foundation
 class TabBarMenuInteractor: BaseInteractor, TabBarMenuInteractorContract {
     weak var output: TabBarMenuInteractorOutputContract!
 
-    var networkProvider: MyProviderContract
-    
-    init (provider: MyProviderContract) {
-        self.networkProvider = provider
-    }
 }

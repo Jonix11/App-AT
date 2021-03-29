@@ -9,11 +9,15 @@
 
 import UIKit
 
-class TabBarMenuView: BaseViewController, TabBarMenuViewContract {
+class TabBarMenuView: BaseTabBarController, TabBarMenuViewContract {
 
 	var presenter: TabBarMenuPresenterContract!
 
 	// MARK: - LifeCycle
+    override func loadView() {
+        super.loadView()
+        TabBarMenuBuilder.setuupPresenter(view: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()

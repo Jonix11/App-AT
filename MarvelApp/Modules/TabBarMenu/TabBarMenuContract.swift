@@ -15,7 +15,7 @@ protocol TabBarMenuEntityContract: BaseEntity {
     
 }
 
-protocol TabBarMenuViewContract: BaseViewController {
+protocol TabBarMenuViewContract: BaseTabBarController {
     var presenter: TabBarMenuPresenterContract! { get set }
     
 }
@@ -41,9 +41,6 @@ protocol TabBarMenuInteractorOutputContract: class {
 protocol TabBarMenuWireframeContract: BaseWireframe {
     var output: TabBarMenuWireframeOutputContract! { get set }
     var view: UIViewController! { get set }
-    
-    func showBasicLoading(text: String)
-    func hideBasicLoading(completion: @escaping (() -> Void))
 }
 
 protocol TabBarMenuWireframeOutputContract: class {
