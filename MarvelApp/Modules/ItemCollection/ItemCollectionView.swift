@@ -20,6 +20,7 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var itemsSelector: UISegmentedControl!
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var statusImage: UIImageView!
@@ -27,13 +28,37 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
     @IBOutlet weak var retryButton: UIButton!
     
     @IBAction func retryButtonTapped(_ sender: Any) {
-        presenter.getCharacterList()
+        presenter.getItemList(withEndpoint: itemSelected)
+    }
+    
+    @IBAction func itemSelectorTapped(_ sender: Any) {
+        switch itemsSelector.selectedSegmentIndex {
+        case 0:
+            itemSelected = .characters
+            delegate.itemSelected = .characters
+            
+        case 1:
+            itemSelected = .events
+            delegate.itemSelected = .events
+        default:
+            break
+        }
+        state = .loading
+        // Vuelvo a poner el scroll arriba del todo
+        collectionView.contentOffset.y = 0
+        presenter.resetItemList()
+        presenter.getItemList(withEndpoint: itemSelected)
     }
     
     // MARK: - Properties
     var datasource: ItemCollectionDatasource!
     // swiftlint:disable:next weak_delegate
     var delegate: ItemCollectionDelegate!
+    
+    // Variable para saber que está seleccionado en UISegmentedControl
+    var itemSelected: MarvelURLEndpoint = .characters
+    
+    // Variable para saber el estado de la vista
     var state: ViewState = .success {
         didSet {
 
@@ -60,7 +85,6 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
     }
 
 	var presenter: ItemCollectionPresenterContract!
-    // private let collectionViewLayout = UICollectionViewFlowLayout()
 
 	// MARK: - LifeCycle
     override func viewDidLoad() {
@@ -73,6 +97,7 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.presenter.viewWillAppear()
+        self.presenter.getItemList(withEndpoint: itemSelected)
     }
 
     private func setupView() {
@@ -86,6 +111,7 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
         collectionView.dataSource = datasource
         collectionView.delegate = delegate
         delegate.presenter = presenter
+        delegate.itemSelected = self.itemSelected
         
         let width = calculateCellWidth()
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -102,8 +128,8 @@ class ItemCollectionView: BaseViewController, ItemCollectionViewContract {
     }
     
     // MARK: - Public Methods
-    func updateCharacterListData(with character: [CellItemContract]) {
-        self.datasource.itemList = character
+    func updateItemListData(with items: [CellItemContract]) {
+        self.datasource.itemList = items
         self.delegate.loading = false
         collectionView.reloadData()
         state = .success
@@ -143,16 +169,17 @@ class ItemCollectionDatasource: NSObject, UICollectionViewDataSource {
 class ItemCollectionDelegate: NSObject, UICollectionViewDelegate {
     weak var presenter: ItemCollectionPresenterContract!
     var loading = false
+    var itemSelected: MarvelURLEndpoint!
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.characterSelected(at: indexPath.item)
+        presenter.itemSelected(at: indexPath.item)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let isFinishingScrolling = scrollView.contentOffset.y >=
             (scrollView.contentSize.height - scrollView.frame.size.height - 300)
         if isFinishingScrolling && !loading {
-            presenter.getCharacterList()
+            presenter.getItemList(withEndpoint: itemSelected)
             loading = true
         }
     }

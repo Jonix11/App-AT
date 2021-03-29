@@ -23,26 +23,30 @@ class ItemCollectionPresenter: BasePresenter, ItemCollectionPresenterContract {
     }
 
     func viewWillAppear() {
-        self.getCharacterList()
+        
     }
     
-    func getCharacterList() {
+    func getItemList(withEndpoint endpoint: MarvelURLEndpoint) {
         firstly {
-            self.interactor.getCharacterList()
-        }.done { [weak self] characterList in
-            if characterList.isEmpty {
+            self.interactor.getItemList(withEndpoint: endpoint)
+        }.done { [weak self] itemList in
+            if itemList.isEmpty {
                 self?.view.setEmptyView()
             } else {
-                self?.view.updateCharacterListData(with: characterList)
+                self?.view.updateItemListData(with: itemList)
             }
         }.catch { [weak self] error in
             self?.view.setErrorView(with: error.localizedDescription)
         }
     }
     
-    func characterSelected(at index: Int) {
-        let characterDetail = self.interactor.returnCharacter(at: index)
-        self.wireframe.showDetailView(with: characterDetail)
+    func itemSelected(at index: Int) {
+        let itemDetail = self.interactor.returnItem(at: index)
+        self.wireframe.showDetailView(with: itemDetail)
+    }
+    
+    func resetItemList() {
+        self.interactor.resetItemList()
     }
 }
 

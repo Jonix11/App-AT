@@ -18,7 +18,7 @@ protocol ItemCollectionEntityContract: BaseEntity {
 protocol ItemCollectionViewContract: BaseViewController {
     var presenter: ItemCollectionPresenterContract! { get set }
     
-    func updateCharacterListData(with character: [CellItemContract])
+    func updateItemListData(with items: [CellItemContract])
     func setEmptyView()
     func setErrorView(with error: String)
     
@@ -32,15 +32,18 @@ protocol ItemCollectionPresenterContract: BasePresenter {
 
     func viewDidLoad()
     func viewWillAppear()
-    func getCharacterList()
-    func characterSelected(at index: Int)
+    func getItemList(withEndpoint endpoint: MarvelURLEndpoint)
+    func itemSelected(at index: Int)
+    func resetItemList()
+    
 }
 
 protocol ItemCollectionInteractorContract: BaseInteractor {
     var output: ItemCollectionInteractorOutputContract! {get set}
     
-    func getCharacterList() -> Promise<[CellItemContract]>
-    func returnCharacter(at index: Int) -> ItemDetailContract
+    func getItemList(withEndpoint endpoint: MarvelURLEndpoint) -> Promise<[CellItemContract]>
+    func returnItem(at index: Int) -> ItemDetailContract
+    func resetItemList()
 }
 
 protocol ItemCollectionInteractorOutputContract: class {

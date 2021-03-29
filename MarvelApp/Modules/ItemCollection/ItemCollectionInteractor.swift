@@ -14,7 +14,7 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
     weak var output: ItemCollectionInteractorOutputContract!
 
     var networkProvider: MarvelNetworkProvider
-    var characterList = [Character]()
+    var itemList = [ItemDetailContract]()
     var characterList4Cell = [CellItemContract]()
     
     init (provider: MarvelNetworkProvider) {
@@ -22,15 +22,16 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
     }
     
     // MARK: - Public Methods
-    func getCharacterList() -> Promise<[CellItemContract]> {
+    func getItemList(withEndpoint endpoint: MarvelURLEndpoint) -> Promise<[CellItemContract]> {
         return Promise<[CellItemContract]> { promise in
             firstly {
-                self.networkProvider.getCharacters(withOffset: String(self.characterList.count))
-            }.done { characterList in
-                characterList.forEach {
-                    self.characterList.append($0)
+                self.networkProvider.getItems(withOffset: String(self.itemList.count),
+                                              endpoint: endpoint)
+            }.done { itemList in
+                itemList.forEach {
+                    self.itemList.append($0)
                 }
-                for item in characterList {
+                for item in itemList {
                     self.characterList4Cell.append(item)
                 }
                 promise.fulfill(self.characterList4Cell)
@@ -40,7 +41,12 @@ class ItemCollectionInteractor: BaseInteractor, ItemCollectionInteractorContract
         }
     }
     
-    func returnCharacter(at index: Int) -> ItemDetailContract {
-        return self.characterList[index]
+    func returnItem(at index: Int) -> ItemDetailContract {
+        return self.itemList[index]
+    }
+    
+    func resetItemList() {
+        itemList = []
+        characterList4Cell = []
     }
 }
