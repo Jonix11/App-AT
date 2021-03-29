@@ -11,9 +11,10 @@ protocol CellItemContract {
     var itemId: Int { get }
     var itemName: String { get }
     var itemImage: URL? { get }
+    var itemDate: Date? { get }
 }
 
-protocol ItemDetailContract {
+protocol ItemDetailContract: CellItemContract {
     var itemId: Int { get }
     var itemName: String { get }
     var itemImage: URL? { get }

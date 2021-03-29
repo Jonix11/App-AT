@@ -13,6 +13,7 @@ struct Event: ImmutableMappable {
     let eventId: Int
     let name: String
     let description: String
+    let startDate: String
     let image: [String: String]
     let comics: [[String: String]]
     
@@ -20,12 +21,14 @@ struct Event: ImmutableMappable {
         eventId = try map.value("id")
         name = try map.value("name")
         description = try map.value("description")
+        startDate = try map.value("start")
         image = try map.value("thumbnail")
         comics = try map.value("comics.items")
     }
 }
 
 extension Event: CellItemContract {
+    
     var itemId: Int {
         return self.eventId
     }
@@ -44,6 +47,10 @@ extension Event: CellItemContract {
         } else {
             return nil
         }
+    }
+    
+    var itemDate: Date? {
+        return DateFormatter().date(from: startDate)
     }
 }
 

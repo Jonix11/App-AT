@@ -13,6 +13,7 @@ struct Character: ImmutableMappable {
     let charaterId: Int
     let name: String
     let description: String
+    let modifiedDate: String
     let image: [String: String]
     let comics: [[String: String]]
     
@@ -20,6 +21,7 @@ struct Character: ImmutableMappable {
         charaterId = try map.value("id")
         name = try map.value("name")
         description = try map.value("description")
+        modifiedDate = try map.value("modified")
         image = try map.value("thumbnail")
         comics = try map.value("comics.items")
     }
@@ -35,6 +37,7 @@ enum ComicsDictionary {
 }
 
 extension Character: CellItemContract {
+    
     var itemId: Int {
         return self.charaterId
     }
@@ -53,6 +56,10 @@ extension Character: CellItemContract {
         } else {
             return nil
         }
+    }
+    
+    var itemDate: Date? {
+        return DateFormatter().date(from: modifiedDate)
     }
 }
 
