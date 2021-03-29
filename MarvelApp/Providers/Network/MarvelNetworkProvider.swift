@@ -10,14 +10,15 @@ import Alamofire
 import PromiseKit
 
 protocol MarvelProviderContract {
-    func getCharacters(withOffset offset: String) -> Promise<[Character]>
+    func getItems(withOffset offset: String, endpoint: MarvelURLEndpoint) -> Promise<[ItemDetailContract]>
+}
+
+enum MarvelURLEndpoint {
+    case characters
+    case events
 }
 
 class MarvelNetworkProvider: MarvelProviderContract {
-    
-    enum MarvelURLEndpoint {
-        case characters
-    }
     
     /// Marver Network errors
     enum MarvelNetworkError: Error, LocalizedError {
@@ -32,24 +33,26 @@ class MarvelNetworkProvider: MarvelProviderContract {
         }
     }
     
-    func getCharacters(withOffset offset: String) -> Promise<[Character]> {
-        return Promise<[Character]> { promise in
-            self.getInitialData(fromEndpoint: .characters, offset: offset).done { data in
-                let characterList = self.getCharacterList(fromData: data)
-                promise.fulfill(characterList)
-            }.catch { _ in
+    func getItems(withOffset offset: String, endpoint: MarvelURLEndpoint) -> Promise<[ItemDetailContract]> {
+        return Promise<[ItemDetailContract]> { promise in
+            self.getInitialData(fromEndpoint: endpoint, offset: offset).done { data in
+                let itemList = self.getItemList(fromData: data, endpoint: endpoint)
+                promise.fulfill(itemList)
+            }.catch { error in
                 promise.reject(MarvelNetworkError.getInitialDataError)
             }
         }
     }
     
     private func getURL(endpoint: MarvelURLEndpoint, offset: String) -> URL {
+        var url = NetworkConstants.getMarvelInitialURL(withOffset: offset)
         switch endpoint {
         case .characters:
-            var url = NetworkConstants.getMarvelInitialURL(withOffset: offset)
             url.appendPathComponent("characters")
-            return url
+        case .events:
+            url.appendPathComponent("events")
         }
+        return url
     }
     
     private func getInitialData(fromEndpoint endpoint: MarvelURLEndpoint, offset: String) -> Promise<[[String: Any]]> {
@@ -66,13 +69,20 @@ class MarvelNetworkProvider: MarvelProviderContract {
         }
     }
     
-    private func getCharacterList(fromData data: [[String: Any]]) -> [Character] {
-        var characterList = [Character]()
+    private func getItemList(fromData data: [[String: Any]], endpoint: MarvelURLEndpoint) -> [ItemDetailContract] {
+        var itemList = [ItemDetailContract]()
         for item in data {
-            if let character = try? Character(JSON: item) {
-                characterList.append(character)
+            switch endpoint {
+            case .characters:
+                if let character = try? Character(JSON: item) {
+                    itemList.append(character)
+                }
+            case .events:
+                if let event = try? Event(JSON: item) {
+                    itemList.append(event)
+                }
             }
         }
-        return characterList
+        return itemList
     }
 }

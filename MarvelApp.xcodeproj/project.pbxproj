@@ -79,6 +79,7 @@
 		AC95CB252611C30E000F0927 /* TabBarMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC95CB1D2611C30E000F0927 /* TabBarMenuView.xib */; };
 		AC95CB262611C30E000F0927 /* TabBarMenuEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB1E2611C30E000F0927 /* TabBarMenuEntity.swift */; };
 		AC95CB272611C30E000F0927 /* TabBarMenuWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95CB1F2611C30E000F0927 /* TabBarMenuWireframe.swift */; };
+		AC95C9B9260E4FDB000F0927 /* HttpbinNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */; };
 		AC6349562611EF4C00651013 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6349552611EF4C00651013 /* Event.swift */; };
 		FCA9D76C4F7BD364387413E1 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD6FD2690DF3D54F97BE1D7 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
@@ -178,6 +179,7 @@
 		AC95CB1D2611C30E000F0927 /* TabBarMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarMenuView.xib; sourceTree = "<group>"; };
 		AC95CB1E2611C30E000F0927 /* TabBarMenuEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuEntity.swift; sourceTree = "<group>"; };
 		AC95CB1F2611C30E000F0927 /* TabBarMenuWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenuWireframe.swift; sourceTree = "<group>"; };
+		AC95C9B8260E4FDB000F0927 /* HttpbinNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpbinNetworkProvider.swift; sourceTree = "<group>"; };
 		AC6349552611EF4C00651013 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C803A39A1F8AFE3F73A10C01 /* Pods-MarvelAppTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		DCE8E8DFD30540FE668E7D71 /* Pods-MarvelAppTests.debug (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug (development).xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug (development).xcconfig"; sourceTree = "<group>"; };
