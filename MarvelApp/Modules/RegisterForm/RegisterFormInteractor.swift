@@ -21,14 +21,13 @@ class RegisterFormInteractor: BaseInteractor, RegisterFormInteractorContract {
     }
     
     // MARK: - Public Methods
-    func createUser(with data: [String : String]) -> Promise<Void> {
+    func createUser(with data: [String: String]) -> Promise<Void> {
         return Promise<Void> { promise in
             firstly {
                 networkProvider.createUser(with: data)
             }.done {
                 promise.fulfill(())
             }.catch { error in
-                #warning("TODO: Improve")
                 promise.reject(error)
             }
         }

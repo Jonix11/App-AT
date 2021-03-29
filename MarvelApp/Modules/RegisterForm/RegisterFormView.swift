@@ -20,11 +20,7 @@ class RegisterFormView: BaseViewController, RegisterFormViewContract {
     
     // MARK: - Actions
     @IBAction func registerButtonClicked(_ sender: Any) {
-        presenter.registerButtonPressed(with: nameTextField.text,
-                                        lastname: lastnameTextField.text,
-                                        email: emailTextField.text,
-                                        password: passwordTextField.text,
-                                        repeatPassword: repeatPasswordTextField.text)
+        self.sendData()
     }
     
     // MARK: - Properties
@@ -62,6 +58,29 @@ class RegisterFormView: BaseViewController, RegisterFormViewContract {
     func resetTextFieldsContent() {
         let textFields = [nameTextField, lastnameTextField, emailTextField, passwordTextField, repeatPasswordTextField]
         textFields.forEach { $0?.text = "" }
+    }
+    
+    func showErrorAlert(with error: String) {
+        let retry = UIAlertAction(title: "Retry", style: .default) { _ in
+            self.sendData()
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            self.resetTextFieldsContent()
+        }
+        self.presenter.wireframe.showCustomModalAlert(self,
+                                                      title: "Error",
+                                                      content: error,
+                                                      customActions: [retry, cancel],
+                                                      completion: nil)
+    }
+    
+    // MARK: - Private Methods
+    func sendData() {
+        presenter.registerButtonPressed(with: nameTextField.text,
+                                        lastname: lastnameTextField.text,
+                                        email: emailTextField.text,
+                                        password: passwordTextField.text,
+                                        repeatPassword: repeatPasswordTextField.text)
     }
 }
 

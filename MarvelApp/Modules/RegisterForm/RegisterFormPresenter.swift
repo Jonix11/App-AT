@@ -65,7 +65,7 @@ class RegisterFormPresenter: BasePresenter, RegisterFormPresenterContract {
                                                                  content: "User created correctly.",
                                                                  completion: self?.view.resetTextFieldsContent)
                         }.catch { error in
-                            #warning("TODO: Improve")
+                            self.view.showErrorAlert(with: error.localizedDescription)
                         }
                     }
                 }

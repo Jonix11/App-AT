@@ -19,6 +19,7 @@ protocol RegisterFormViewContract: BaseViewController {
     var presenter: RegisterFormPresenterContract! { get set }
     
     func resetTextFieldsContent()
+    func showErrorAlert(with error: String)
     
 }
 
