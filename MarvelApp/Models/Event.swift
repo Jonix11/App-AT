@@ -11,7 +11,7 @@ import ObjectMapper
 struct Event: ImmutableMappable {
     
     let eventId: Int
-    let name: String
+    let title: String
     let description: String
     let startDate: String
     let image: [String: String]
@@ -19,7 +19,7 @@ struct Event: ImmutableMappable {
     
     init(map: Map) throws {
         eventId = try map.value("id")
-        name = try map.value("name")
+        title = try map.value("title")
         description = try map.value("description")
         startDate = try map.value("start")
         image = try map.value("thumbnail")
@@ -34,7 +34,7 @@ extension Event: CellItemContract {
     }
 
     var itemName: String {
-        return self.name
+        return self.title
     }
 
     var itemImage: URL? {
@@ -42,7 +42,7 @@ extension Event: CellItemContract {
         let ext = self.image[ImageDictionary.ext]
         if let strPath = path,
            let strExt = ext {
-            let strURL = strPath + strExt
+            let strURL = strPath + "." + strExt
             return URL(string: strURL)
         } else {
             return nil
